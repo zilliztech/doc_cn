@@ -2,7 +2,7 @@
 id: "megawise_head"
 lang: "cn"
 title: "MegaWise"
-label1: “产品介绍”
+label1: "产品介绍"
 label2: "用户手册"
 ---
 # MegaWise
