@@ -2,7 +2,7 @@
 id: "megawise_intro"
 lang: "cn"
 title: "MegaWise 介绍"
-label1: "ZILLIZ Analytics"
+label1: "产品介绍"
 label2: "用户手册"
 label3: "MegaWise"
 ---
