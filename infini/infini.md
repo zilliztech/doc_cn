@@ -2,7 +2,8 @@
 id: "infini_head"
 lang: "cn"
 title: "Infini"
-label1: "用户手册"
+label1: "产品介绍"
+label2: "用户手册"
 ---
 # Infini
 
