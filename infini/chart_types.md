@@ -30,7 +30,7 @@ Infini 提供从最简单的数图到地图。
 ![堆垛图](../assets/stackedbar.png)
 
 ## 点地图
-![点滴图](../assets/pointmap.png)
+![点地图](../assets/pointmap.png)
 
 ## 热力图
 ![热力图](../assets/heatmap.png)
