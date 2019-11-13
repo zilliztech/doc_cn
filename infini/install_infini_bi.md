@@ -2,9 +2,8 @@
 id: "install_infini"
 lang: "cn"
 title: "安装 Infini 可视化交互分析界面"
-label1: "产品介绍"
-label2: "用户手册"
-label3: "Infini"
+label1: "用户手册"
+label2: "Infini"
 ---
 # 安装 Infini 可视化交互分析界面
 
