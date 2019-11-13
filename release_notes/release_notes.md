@@ -2,7 +2,7 @@
 id: "release_notes"
 lang: "cn"
 title: "发布说明"
-label1: "产品介绍"
+label1: ""
 ---
 # 发布说明
 
