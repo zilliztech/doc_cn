@@ -370,7 +370,7 @@ label2: "MegaWise"
 7. 启动 MegaWise。
 
     ```bash
-    sudo docker run --gpus all --shm-size 17179869184 \
+    $ sudo docker run --gpus all --shm-size 17179869184 \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
                             -v $WORK_DIR/logs:/megawise/logs \
