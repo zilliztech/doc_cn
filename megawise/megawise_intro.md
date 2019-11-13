@@ -2,9 +2,8 @@
 id: "megawise_intro"
 lang: "cn"
 title: "MegaWise 介绍"
-label1: "产品介绍"
-label2: "用户手册"
-label3: "MegaWise"
+label1: "用户手册"
+label2: "MegaWise"
 ---
 # MegaWise 介绍
 
