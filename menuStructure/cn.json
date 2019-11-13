@@ -20,7 +20,7 @@
       },
       {
         "id": "megawise_head",
-        "title": "MegaWise",
+        "title": "MegaWise 数据分析引擎",
         "lang": "cn",
         "label1": "用户手册",
         "label2": null,
@@ -32,7 +32,7 @@
         "title": "MegaWise 介绍",
         "lang": "cn",
         "label1": "用户手册",
-        "label2": "MegaWise",
+        "label2": "MegaWise 数据分析引擎",
         "label3": "",
         "order": 0
       },
@@ -41,13 +41,13 @@
         "title": "安装 MegaWise",
         "lang": "cn",
         "label1": "用户手册",
-        "label2": "MegaWise",
+        "label2": "MegaWise 数据分析引擎",
         "label3": "",
         "order": 1
       },
       {
         "id": "infini_head",
-        "title": "Infini",
+        "title": "Infini 可视化交互界面",
         "lang": "cn",
         "label1": "用户手册",
         "label2": null,
@@ -59,7 +59,7 @@
         "title": "Infini 介绍",
         "lang": "cn",
         "label1": "用户手册",
-        "label2": "Infini",
+        "label2": "Infini 可视化交互界面",
         "order": 0
       },
       {
@@ -67,7 +67,7 @@
         "title": "安装 Infini",
         "lang": "cn",
         "label1": "用户手册",
-        "label2": "Infini",
+        "label2": "Infini 可视化交互界面",
         "order": 1
       },
       {
@@ -75,7 +75,7 @@
         "title": "添加新的仪表盘",
         "lang": "cn",
         "label1": "用户手册",
-        "label2": "Infini",
+        "label2": "Infini 可视化交互界面",
         "label3": "",
         "order": 2
       },
@@ -84,7 +84,7 @@
         "title": "Infini 界面类型",
         "lang": "cn",
         "label1": "用户手册",
-        "label2": "Infini",
+        "label2": "Infini 可视化交互界面",
         "order": 3
       },
       {
