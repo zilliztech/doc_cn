@@ -2,19 +2,21 @@
     "menuList": [
       {
         "id": "analytics_overview",
-        "title": "ZILLIZ Analytics",
+        "title": "产品介绍",
         "lang": "cn",
         "label1": "",
         "label2": null,
-        "label3": null
+        "label3": null,
+        "order": 0
       },
       {
         "id": "user_manual",
         "title": "用户手册",
         "lang": "cn",
-        "label1": "ZILLIZ Analytics",
+        "label1": "",
         "label2": null,
-        "label3": null
+        "label3": null,
+        "order": 1
       },
       {
         "id": "megawise_head",
@@ -22,55 +24,17 @@
         "lang": "cn",
         "label1": "用户手册",
         "label2": null,
-        "label3": null
+        "label3": null,
+        "order": 0
       },
       {
-        "id": "add_dashboard",
-        "title": "添加新的仪表盘",
+        "id": "megawise_intro",
+        "title": "MegaWise 介绍",
         "lang": "cn",
         "label1": "ZILLIZ Analytics",
         "label2": "用户手册",
-        "label3": "Infini"
-      },
-      {
-        "id": "infini_head",
-        "title": "Infini",
-        "lang": "cn",
-        "label1": "用户手册",
-        "label2": null,
-        "label3": null
-      },
-      {
-        "id": "install_infini",
-        "title": "安装 Infini 可视化交互分析界面",
-        "lang": "cn",
-        "label1": "ZILLIZ Analytics",
-        "label2": "用户手册",
-        "label3": "Infini"
-      },
-      {
-        "id": "chart_types",
-        "title": "Infini 可视化交互分析界面类型",
-        "lang": "cn",
-        "label1": "ZILLIZ Analytics",
-        "label2": "用户手册",
-        "label3": "Infini"
-      },
-      {
-        "id": "release_notes",
-        "title": "发布说明",
-        "lang": "cn",
-        "label1": "ZILLIZ Analytics",
-        "label2": null,
-        "label3": null
-      },
-      {
-        "id": "release_notes",
-        "title": "0.4.0 发布说明",
-        "lang": "cn",
-        "label1": "ZILLIZ Analytics",
-        "label2": "发布说明",
-        "label3": null
+        "label3": "MegaWise",
+        "order": 0
       },
       {
         "id": "install_megawise",
@@ -82,13 +46,57 @@
         "order": 1
       },
       {
-        "id": "megawise_intro",
-        "title": "MegaWise 介绍",
+        "id": "infini_head",
+        "title": "Infini",
         "lang": "cn",
-        "label1": "ZILLIZ Analytics",
-        "label2": "用户手册",
-        "label3": "MegaWise",
+        "label1": "用户手册",
+        "label2": null,
+        "label3": null,
+        "order": 0
+      },
+      {
+        "id": "install_infini",
+        "title": "安装 Infini 可视化交互分析界面",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "Infini",
+        "order": 0
+      },
+      {
+        "id": "add_dashboard",
+        "title": "添加新的仪表盘",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "Infini",
+        "label3": "",
+        "order": 1
+      },
+      {
+        "id": "chart_types",
+        "title": "Infini 可视化交互分析界面类型",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "Infini",
+        "order": 2
+      },
+      {
+        "id": "release_notes",
+        "title": "发布说明",
+        "lang": "cn",
+        "label1": "",
+        "label2": null,
+        "label3": null,
+        "order": 2
+      },
+      {
+        "id": "release_notes",
+        "title": "0.4.0 发布说明",
+        "lang": "cn",
+        "label1": "发布说明",
+        "label2": "",
+        "label3": null,
         "order": 0
       }
+      
     ]
   }
