@@ -2,7 +2,7 @@
 id: "user_manual"
 lang: "cn"
 title: "用户手册"
-label1: "产品介绍"
+label1: ""
 ---
 
 
