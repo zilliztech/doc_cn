@@ -55,12 +55,20 @@
         "order": 0
       },
       {
-        "id": "install_infini",
-        "title": "安装 Infini 可视化交互分析界面",
+        "id": "infini_intro",
+        "title": "Infini 介绍",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "Infini",
         "order": 0
+      },
+      {
+        "id": "install_infini",
+        "title": "安装 Infini",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "Infini",
+        "order": 1
       },
       {
         "id": "add_dashboard",
@@ -69,15 +77,15 @@
         "label1": "用户手册",
         "label2": "Infini",
         "label3": "",
-        "order": 1
+        "order": 2
       },
       {
         "id": "chart_types",
-        "title": "Infini 可视化交互分析界面类型",
+        "title": "Infini 界面类型",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "Infini",
-        "order": 2
+        "order": 3
       },
       {
         "id": "release_notes",
