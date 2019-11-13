@@ -2,9 +2,8 @@
 id: "add_dashboard"
 lang: "cn"
 title: "添加新的仪表盘"
-label1: "产品介绍"
-label2: "用户手册"
-label3: "Infini"
+label1: "用户手册"
+label2: "Infini"
 ---
 # 添加新的仪表盘
 
