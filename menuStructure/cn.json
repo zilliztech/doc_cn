@@ -1,0 +1,94 @@
+{
+    "menuList": [
+      {
+        "id": "analytics_overview",
+        "title": "ZILLIZ Analytics",
+        "lang": "cn",
+        "label1": "",
+        "label2": null,
+        "label3": null
+      },
+      {
+        "id": "user_manual",
+        "title": "用户手册",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": null,
+        "label3": null
+      },
+      {
+        "id": "megawise_head",
+        "title": "MegaWise",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": null,
+        "label3": null
+      },
+      {
+        "id": "add_dashboard",
+        "title": "添加新的仪表盘",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": "用户手册",
+        "label3": "Infini"
+      },
+      {
+        "id": "infini_head",
+        "title": "Infini",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": null,
+        "label3": null
+      },
+      {
+        "id": "install_infini",
+        "title": "安装 Infini 可视化交互分析界面",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": "用户手册",
+        "label3": "Infini"
+      },
+      {
+        "id": "chart_types",
+        "title": "Infini 可视化交互分析界面类型",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": "用户手册",
+        "label3": "Infini"
+      },
+      {
+        "id": "release_notes",
+        "title": "发布说明",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": null,
+        "label3": null
+      },
+      {
+        "id": "release_notes",
+        "title": "0.4.0 发布说明",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": "发布说明",
+        "label3": null
+      },
+      {
+        "id": "install_megawise",
+        "title": "安装 MegaWise",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": "用户手册",
+        "label3": "MegaWise",
+        "order": 1
+      },
+      {
+        "id": "megawise_intro",
+        "title": "MegaWise 介绍",
+        "lang": "cn",
+        "label1": "ZILLIZ Analytics",
+        "label2": "用户手册",
+        "label3": "MegaWise",
+        "order": 0
+      }
+    ]
+  }
