@@ -2,9 +2,8 @@
 id: "install_megawise"
 lang: "cn"
 title: "安装 MegaWise"
-label1: "产品介绍"
-label2: "用户手册"
-label3: "MegaWise"
+label1: "用户手册"
+label2: "MegaWise"
 ---
 
 # 安装 MegaWise
