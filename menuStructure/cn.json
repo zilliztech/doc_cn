@@ -25,7 +25,8 @@
         "label1": "用户手册",
         "label2": null,
         "label3": null,
-        "order": 0
+        "order": 0,
+        "isMenu": true
       },
       {
         "id": "megawise_intro",
@@ -52,7 +53,8 @@
         "label1": "用户手册",
         "label2": null,
         "label3": null,
-        "order": 0
+        "order": 0,
+        "isMenu": true
       },
       {
         "id": "infini_intro",
@@ -88,13 +90,24 @@
         "order": 3
       },
       {
+        "id": "Bootcamp",
+        "title": "Bootcamp",
+        "lang": "cn",
+        "label1": "",
+        "label2": null,
+        "label3": null,
+        "order": 2,
+        "outLink": "https://github.com/zilliztech/Bootcamp"
+      },
+      {
         "id": "release_notes",
         "title": "发布说明",
         "lang": "cn",
         "label1": "",
         "label2": null,
         "label3": null,
-        "order": 2
+        "order": 3,
+        "isMenu": true
       },
       {
         "id": "release_notes_0.4.0",
