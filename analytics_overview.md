@@ -10,9 +10,9 @@ label1: ""
 
 ![InfiniAnalytics](./assets/InfiniAnalytics.jpg)
 
-> **ZILLIZ Analytics 平台包括：**
-> 1. MegaWise 数据分析引擎
-> 2. Picasso 图形渲染引擎
-> 3. Infini 可视化交互分析界面
+ZILLIZ Analytics 平台包括：
+  - MegaWise 数据分析引擎
+  - Picasso 图形渲染引擎
+  - Infini 可视化交互分析界面
 
-产品体验请联系：support@zilliz.com
+产品体验请联系：[support@zilliz.com](mailto:support@zilliz.com)
