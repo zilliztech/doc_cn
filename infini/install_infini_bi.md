@@ -7,6 +7,16 @@ label2: "Infini"
 ---
 # 安装 Infini 可视化交互分析界面
 
+<!-- TOC -->
+
+- [安装前提](#安装前提)
+- [使用 Docker Compose 运行 Infini](#使用-docker-compose-运行-infini)
+- [可视化界面](#可视化界面)
+- [填写 Megawise 数据库信息](#填写-megawise-数据库信息)
+- [关闭 Infini 可视化交互分析界面](#关闭-infini-可视化交互分析界面)
+
+<!-- /TOC -->
+
 ## 安装前提
 
 1. 请确认已安装以下软件
@@ -97,7 +107,7 @@ label2: "Infini"
 - 用户名: zilliz
 - 密码: zilliz
 
-## 填写Megawise数据库信息
+## 填写 Megawise 数据库信息
 登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面
 
 ![fill-megawise-info](../assets/fill-megawise-info.png)
