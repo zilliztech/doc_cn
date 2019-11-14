@@ -1,11 +1,11 @@
 ---
 id: "megawise_intro"
 lang: "cn"
-title: "MegaWise 介绍"
+title: "MegaWise 简介"
 label1: "用户手册"
 label2: "MegaWise"
 ---
-# MegaWise 介绍
+# MegaWise 简介
 
 <!-- TOC -->
 
