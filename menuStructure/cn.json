@@ -16,7 +16,8 @@
         "label1": "",
         "label2": null,
         "label3": null,
-        "order": 1
+        "order": 1,
+        "isMenu": true
       },
       {
         "id": "megawise_head",
