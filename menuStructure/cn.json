@@ -82,7 +82,7 @@
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
         "label3": "SQL 语言参考",
-        "order": 0
+        "order": 4
       },
       {
         "id": "megawise_sql_datadef",
@@ -91,7 +91,7 @@
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
         "label3": "SQL 语言参考",
-        "order": 1
+        "order": 5
       },
       {
         "id": "megawise_sql_query",
@@ -100,7 +100,7 @@
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
         "label3": "SQL 语言参考",
-        "order": 2
+        "order": 6
       },
       {
         "id": "megawise_data_type",
@@ -109,7 +109,7 @@
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
         "label3": "SQL 语言参考",
-        "order": 3
+        "order": 7
       },
       {
         "id": "megawise_func_op",
@@ -118,7 +118,7 @@
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
         "label3": "SQL 语言参考",
-        "order": 4
+        "order": 8
       },
       {
         "id": "infini_head",
@@ -127,7 +127,7 @@
         "label1": "用户手册",
         "label2": null,
         "label3": null,
-        "order": 0,
+        "order": 1,
         "isMenu": true
       },
       {
