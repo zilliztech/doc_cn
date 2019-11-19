@@ -10,27 +10,26 @@ label2: "MegaWise"
 
 <!-- TOC -->
 
-- [查询](#查询)
-    - [概述](#概述)
-    - [表表达式](#表表达式)
-        - [FROM 子句](#from-子句)
-            - [连接表](#连接表)
-            - [表和列别名](#表和列别名)
-            - [子查询](#子查询)
-        - [WHERE 子句](#WHERE-子句)
-        - [GROUP BY 和 HAVING 子句](#GROUP-BY-和-HAVING-子句)
-    - [选择列表](#选择列表)
-        - [选择列表项](#选择列表项)
-        - [列标签](#列标签)
-        - [使用 DISTINCT 删除结果的重复行](#使用-DISTINCT-删除结果的重复行)
-    - [行排序](#行排序)
-    - [使用 LIMIT 和 OFFSET 查询部分结果](#使用-LIMIT-和-OFFSET-查询部分结果)
+- [概述](#概述)
+- [表表达式](#表表达式)
+   - [FROM 子句](#from-子句)
+      - [连接表](#连接表)
+      - [表和列别名](#表和列别名)
+      - [子查询](#子查询)
+   - [WHERE 子句](#WHERE-子句)
+   - [GROUP BY 和 HAVING 子句](#GROUP-BY-和-HAVING-子句)
+- [选择列表](#选择列表)
+   - [选择列表项](#选择列表项)
+   - [列标签](#列标签)
+   - [使用 DISTINCT 删除结果的重复行](#使用-DISTINCT-删除结果的重复行)
+- [行排序](#行排序)
+- [使用 LIMIT 和 OFFSET 查询部分结果](#使用-LIMIT-和-OFFSET-查询部分结果)
 
 <!-- /TOC -->
 
 ## 概述
 
-从数据库中检索数据的过程或命令叫做查询。在 SQL 里 SELECT 命令用于指定查询。 SELECT 命令的一般语法是
+从数据库中检索数据的过程或命令叫做查询。在 SQL 里 `SELECT` 命令用于指定查询。 `SELECT` 命令的一般语法是
 
 ```sql
 [WITH with_queries] SELECT select_list FROM table_expression [sort_specification]
