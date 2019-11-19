@@ -1,12 +1,12 @@
 ---
 id: "megawise_basic_operation"
 lang: "cn"
-title: "MegaWise 基本操作"
+title: "基本数据操作"
 label1: "用户手册"
 label2: "MegaWise"
 ---
 
-# MegaWise 基本操作
+# 基本数据操作
 
 <!-- TOC -->
 
