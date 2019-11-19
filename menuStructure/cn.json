@@ -57,7 +57,7 @@
       }, 
       {
         "id": "megawise_basic_operation",
-        "title": "MegaWise 基本操作",
+        "title": "基本数据操作",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
@@ -157,7 +157,7 @@
       },
       {
         "id": "chart_types",
-        "title": "Infini 图表类型",
+        "title": "图表类型",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "Infini 可视化交互界面",

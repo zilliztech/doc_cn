@@ -1,12 +1,9 @@
 ---
 id: "chart_types"
 lang: "cn"
-title: "Infini 可视化交互分析界面类型"
-label1: "用户手册"
-label2: "Infini"
 ---
 
-# Infini 图表类型
+# 图表类型
 
 从最简单的数图到地图，Infini 提供多种图表类型。
 
