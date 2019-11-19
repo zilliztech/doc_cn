@@ -3,7 +3,7 @@ id: "megawise_func_op"
 lang: "cn"
 title: "函数和操作符"
 ---
-## 函数和操作符
+# 函数和操作符
 
 <!-- TOC -->
 
@@ -24,7 +24,7 @@ title: "函数和操作符"
 
 <!-- /TOC -->
 
-### 逻辑操作符
+## 逻辑操作符
 
 常用的逻辑操作符有 `AND`, `OR`, 和 `NOT`. SQL 的逻辑系统，包括真、假和 `null` ，`null`（表示“未知”）三种值。其逻辑运算规则见如下的真值表：
 
@@ -47,7 +47,7 @@ title: "函数和操作符"
 
 操作符 `AND` 和 `OR` 是可交换的，也就是说，可以交换左右操作数而不影响结果。
 
-### 6.2. 比较函数和操作符
+## 比较函数和操作符
 
 常见的比较操作符如下表所示。
 
@@ -123,7 +123,7 @@ expression NOTNULL
 避免使用 `expression = NULL`，因为 `NULL` 是不等于 `NULL` 的（空值代表一个未知的值，无法判断两个未知的数值是否相等）。
 
 
-### 数学函数和操作符
+## 数学函数和操作符
 
 MegaWise 为多种数值类型数据提供了数学操作符。下表展示了所有可用的数学操作符。
 
@@ -167,7 +167,7 @@ MegaWise 为多种数值类型数据提供了数学操作符。下表展示了�
 |  `sin(x)`   |  正弦  |
 |  `tan(x)`   |  正切  |
 
-### 字符串函数和操作符
+## 字符串函数和操作符
 
 MegaWise 支持的字符串函数和操作符如下表所示。
 
@@ -181,7 +181,7 @@ MegaWise 支持的字符串函数和操作符如下表所示。
 | `substr(string, int, int)`               | text     | 提取子串 | substr('Thomas', 2, 3)           | hom   |
 | `substring(string [from int] [for int])` | text     | 提取子串 | substring('Thomas' from 2 for 3) | hom   |
 
-### 模式匹配
+## 模式匹配
 
 MegaWise 提供了 `LIKE` 操作符实现模式匹配。
 
@@ -207,7 +207,7 @@ string NOT LIKE pattern [ESCAPE escape-character]
 
 >注意：反斜线在字符串类型数据中已经有特殊含义了，所以如果要写一个包含反斜线的模式常量，则需要在 *pattern* 中匹配两个反斜线。 由于 *pattern* 中也使用反斜线作为转义字符，所以写一个匹配单个反斜线的模式实际上要在 *pattern* 里写四个反斜线。 可以通过用 ESCAPE 选择一个不同的转义字符来避免此类操作。这时反斜线不再是 LIKE 的特殊字符，但仍然是字符数据中的特殊字符，所以你还是需要两个反斜线。 此外，可以通过写 `ESCAPE ''` 的方式不选择转义字符，从而禁用转义机制。
 
-### 日期/时间函数和操作符
+## 日期/时间函数和操作符
 
 下表展示了时间类型数据的基本算术操作符 （+、*等）的行为。
 
@@ -334,7 +334,7 @@ string NOT LIKE pattern [ESCAPE escape-character]
     结果：2001
 
 
-### 条件表达式
+## 条件表达式
 
 本节描述 MegaWise 中的 `CASE` 条件表达式，该表达式类似于其它编程语言中的 if/else 语句：
 
@@ -404,7 +404,7 @@ SELECT a,
  3 | other
 ```
 
-### 聚集函数
+## 聚集函数
 
 聚集函数从一个输入值的集合计算一个单一结果。下表展示了 MegaWise 支持的聚集函数。
 
@@ -419,11 +419,11 @@ SELECT a,
 | `min(expression)`   | 任意数字、字符串，日期/时间，网络，或枚举类型或这些类型的数组  | 与参数数据类型相同                                           | 支持     | 所有输入值中*expression*的最小值 |
 | `sum(expression)`   | `smallint`、`int`、 `bigint`、`real`、`double precision`、`numeric`或`interval` | 对`smallint`或`int`参数是`bigint`，对`bigint`参数是`numeric`，否则和参数数据类型相同 | 支持    | 所有输入值的*expression*的和     |
 
-### 子查询表达式
+## 子查询表达式
 
 本节描述 MegaWise 中可用的子查询表达式。所有本节中成文的表达式都返回布尔类型（真/假）的结果。
 
-#### EXISTS 子查询
+### EXISTS 子查询
 
 ```sql
 EXISTS (subquery)
@@ -441,7 +441,7 @@ FROM tab1
 WHERE EXISTS (SELECT 1 FROM tab2 WHERE col2 = tab1.col2);
 ```
 
-#### 6.9.2. IN 子查询
+### IN 子查询
 
 ```sql
 expression IN (subquery)
@@ -451,7 +451,7 @@ expression IN (subquery)
 
 如果表达式计算结果为 NULL ，或者子查询结果中没有与表达式相等的值但包含 NULL ，那么`IN`结构的结果将是 NULL ，而不是 "false" 。
 
-#### 6.9.3. NOT IN 子查询
+### NOT IN 子查询
 
 ```sql
 expression NOT IN (subquery)
@@ -461,7 +461,7 @@ expression NOT IN (subquery)
 
 如果表达式计算结果为 NULL ，或者子查询结果中没有与表达式相等的值但包含 NULL ，那么 `NOT IN` 结构的结果将是 NULL，而不是 "true" 。
 
-### 6.10. 系统管理函数
+## 系统管理函数
 
 下表展示了那些可以用于查询以及修改运行时配置参数的函数。
 
