@@ -29,7 +29,7 @@ label2: "MegaWise"
 
 ## 概述
 
-从数据库中检索数据的过程或命令叫做查询。在 SQL 里 SELECT 命令用于指定查询。 SELECT 命令的一般语法是
+从数据库中检索数据的过程或命令叫做查询。在 SQL 里 `SELECT` 命令用于指定查询。 `SELECT` 命令的一般语法是
 
 ```sql
 [WITH with_queries] SELECT select_list FROM table_expression [sort_specification]
