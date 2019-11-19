@@ -1,5 +1,5 @@
 ---
-id: "megawise_sql_data_type"
+id: "megawise_data_type"
 lang: "cn"
 title: "数据定义"
 ---
