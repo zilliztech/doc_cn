@@ -10,13 +10,22 @@
         "order": 0
       },
       {
+        "id": "analytics_install",
+        "title": "安装说明",
+        "lang": "cn",
+        "label1": "",
+        "label2": null,
+        "label3": null,
+        "order": 1
+      },
+      {
         "id": "user_manual",
         "title": "用户手册",
         "lang": "cn",
         "label1": "",
         "label2": null,
         "label3": null,
-        "order": 1,
+        "order": 2,
         "isMenu": true
       },
       {
@@ -162,7 +171,7 @@
         "label1": "",
         "label2": null,
         "label3": null,
-        "order": 2,
+        "order": 3,
         "outLink": "https://github.com/zilliztech/Bootcamp"
       },
       {
@@ -172,7 +181,7 @@
         "label1": "",
         "label2": null,
         "label3": null,
-        "order": 3,
+        "order": 4,
         "isMenu": true
       },
       {
