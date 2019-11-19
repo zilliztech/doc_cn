@@ -27,7 +27,7 @@ CREATE TABLE my_first_table (
 );
 ```
 
-将创建一个名为 my_first_table 的表，它拥有两个列。第一个列名为 first_column 且数据类型为 text ；第二个列名为 second_column 且数据类型为 integer 。注意列表中各列由逗号分隔并被圆括号包围。
+将创建一个名为 my\_first\_table 的表，它拥有两个列。第一个列名为 first_column 且数据类型为 text ；第二个列名为 second_column 且数据类型为 integer 。注意列表中各列由逗号分隔并被圆括号包围。
 
 当然，前面的例子是非常不自然的。通常，我们为表和列赋予的名称都会表明它们存储着什么类别的数据。因此让我们再看一个更现实的例子：
 
