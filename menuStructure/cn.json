@@ -46,6 +46,71 @@
         "label2": "MegaWise 数据分析引擎",
         "label3": "",
         "order": 1
+      }, 
+      {
+        "id": "megawise_basic_operation",
+        "title": "MegaWise 基本操作",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "",
+        "order": 2
+      },
+      
+      {
+        "id": "megawise_lan_ref",
+        "title": "SQL 语言参考",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "",
+        "order": 3,
+        "isMenu": true
+      },
+      {
+        "id": "megawise_sql_syntax",
+        "title": "SQL 语法",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "SQL 语言参考",
+        "order": 0
+      },
+      {
+        "id": "megawise_sql_datadef",
+        "title": "数据定义",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "SQL 语言参考",
+        "order": 1
+      },
+      {
+        "id": "megawise_sql_query",
+        "title": "查询",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "SQL 语言参考",
+        "order": 2
+      },
+      {
+        "id": "megawise_data_type",
+        "title": "数据类型",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "SQL 语言参考",
+        "order": 3
+      },
+      {
+        "id": "megawise_func_op",
+        "title": "函数和操作符",
+        "lang": "cn",
+        "label1": "用户手册",
+        "label2": "MegaWise 数据分析引擎",
+        "label3": "SQL 语言参考",
+        "order": 4
       },
       {
         "id": "infini_head",
