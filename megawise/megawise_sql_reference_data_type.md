@@ -1,9 +1,9 @@
 ---
-id: "megawise_sql_data_type"
+id: "megawise_data_type"
 lang: "cn"
 title: "数据定义"
 ---
-## 数据类型
+# 数据类型
 
 <!-- TOC -->
 
@@ -19,7 +19,7 @@ title: "数据定义"
 
 <!-- /TOC -->
 
-### 数字类型
+## 数字类型
 
 数字类型由 2、4 或 8 字节的整数以及4或8字节的浮点数和可变精度小数组成。下表列出了所有可用类型。
 
@@ -35,11 +35,11 @@ title: "数据定义"
 | `real`             | 4 字节    | 可变精度，不精确   | 6位十进制精度                                |
 | `double precision` | 8 字节    | 可变精度，不精确   | 15位十进制精度                               |
 
-#### 整数类型
+### 整数类型
 
 SQL只声明了整数类型 `integer` （或 `int` ）、`smallint` 和 `bigint` 。类型 `int2` 、 `int4` 和 `int8` 都是扩展，也在许多其它 SQL 数据库系统中使用。
 
-#### 浮点类型
+### 浮点类型
 
 数据类型 `real` 和 `double precision` 是不准确的、可变精度的数字类型。这些类型是IEEE标准 754 二进制浮点算术（分别对应单精度和双精度）的一般实现。
 
@@ -68,7 +68,7 @@ IEEE 754 指定 `NaN` 不与任何其他浮点值（包括 `NaN` ）相等。
 ------
 
 
-### 字符类型
+## 字符类型
 
 下表显示了在 MegaWise 里可用的字符类型。
 
@@ -117,7 +117,7 @@ SELECT b, FROM test2;
 | `"char"` | 1 字节    | 单字节内部类型       |
 | `name`   | 64 字节   | 用于对象名的内部类型 |
 
-### 日期/时间类型
+## 日期/时间类型
 
 MegaWise 支持 SQL 中所有的日期和时间类型，如下表所示。日期根据公历来计算。
 
@@ -148,7 +148,7 @@ HOUR TO SECOND
 MINUTE TO SECOND
 ```
 
-#### 日期/时间输入
+### 日期/时间输入
 
 日期和时间的输入可以接受几乎任何合理的格式，包括 ISO 8601、SQL 兼容的、传统 POSTGRES 的和其他的形式。 对于一些格式，日期输入里的日、月和年的顺序会让人混淆， 并且支持指定所预期的这些域的顺序。把 DateStyle 参数设置为 MDY ，就是选择“月－日－年”的解释，设置为 DMY 就是 “日－月－年”，而 YMD 是 “年－月－日”。
 
@@ -160,7 +160,7 @@ MINUTE TO SECOND
 type 'value'
 ```
 
-#### 日期/时间格式
+### 日期/时间格式
 
 时间/日期类型的格式可以设成四种风格之一： ISO 8601、SQL（Ingres）、传统的 POSTGRES（Unix的date格式）或 German 。默认是 ISO 格式（ISO 标准要求使用 ISO 8601 格式。ISO 输出格式的名字是历史偶然）。下表显示了每种风格的例子。date 和 time 类型通常只有日期或时间部分和例子中一致。不过，POSTGRES 风格输出的是 ISO 格式的只有日期的值。
 
@@ -192,7 +192,7 @@ SQL 和 POSTGRES 风格中，如果 DMY 域顺序被指定，“日”将出现�
 
 日期/时间风格可以由用户使用 `SET datestyle` 命令选取，在 `megawise_config.yaml` 配置文件里的参数 `result_config.date_order` 设置或者在 `PGDATESTYLE` 环境变量里设置。
 
-### 布尔类型
+## 布尔类型
 
 MegaWise 提供标准的 SQL 类型 boolean，参见下表。boolean 可以有多个状态：“true（真）”、“false（假）”和第三种状态“unknown（未知）”，未知状态由 SQL 空值表示。
 
