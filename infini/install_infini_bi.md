@@ -23,7 +23,7 @@ label2: "Infini"
    - [Docker 19.03 or higher](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
    - [Docker Compose](https://docs.docker.com/compose/install/)
 2. 请确认已安装 MegaWise ，开启MegaWise服务并导入示例数据
-   - [安装 Megawise](https://www.zilliz.com/cn/docs/install_infini)
+   - [安装 MegaWise](https://www.zilliz.com/cn/docs/install_infini)
 
 
 
@@ -77,9 +77,7 @@ label2: "Infini"
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 ip 地址
-   >
-   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
+   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 IP 地址。若使用 Windows 系统查看 Infini 界面，则在`C:\Windows\System32\drivers\etc\hosts` 文件中添加 </font>
 
    ```shell
     #/etc/hosts
