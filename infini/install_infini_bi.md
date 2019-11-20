@@ -19,17 +19,17 @@ label2: "Infini"
 
 ## 安装前提
 
-1. 请确认已安装以下软件
+1. 请确认已安装以下软件。
    - [Docker 19.03 or higher](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
    - [Docker Compose](https://docs.docker.com/compose/install/)
-2. 请确认已安装 MegaWise ，开启MegaWise服务并导入示例数据
+2. 请确认已安装 MegaWise，开启 MegaWise 服务并导入示例数据。
    - [安装 MegaWise](https://www.zilliz.com/cn/docs/install_infini)
 
 
 
 ## 使用 Docker Compose 运行 Infini 
 
-1. 确保 docker-compose 正在运行 
+1. 确保 docker-compose 正在运行。 
 
    ```bash
    $ docker-compose --version
@@ -39,18 +39,16 @@ label2: "Infini"
     ```
     docker-compose version 1.24.1, build 4667896b
     ```
-2. 下载两个配置文件到同一文件目录
+2. 下载两个配置文件到同一文件目录。
 
    ```bash
    $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/webserver/.env \
    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/webserver/docker-compose.yml
    ```
 
-3. 修改 `.env` 文件
+3. 修改 `.env` 文件。
 
-   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 ip 地址
-   >
-   > 请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 ip 地址。</font>
+   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 IP 地址。</font>
 
    ```yml
    # 默认API服务地址
@@ -69,7 +67,7 @@ label2: "Infini"
    MEGAWISE_PORT=5433
    ```
 
-4. 启动 Infini web server
+4. 启动 Infini web server。
 
    ```shell
    # start Infini
@@ -85,7 +83,7 @@ label2: "Infini"
    ```
 
 
-6. 打开任意浏览器，优先支持 Chrome 和 Firefox
+6. 打开任意浏览器，优先支持 Chrome 和 Firefox。
 
    ```shell
    # 如果修改了80端口，请加上端口号
@@ -106,17 +104,17 @@ label2: "Infini"
 - 密码: zilliz
 
 ## 填写 MegaWise 数据库信息
-登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面
+登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面。
 
 ![fill-megawise-info](../assets/fill-megawise-info.png)
 
 ![dashboard-list](../assets/dashboard-list.png)
 
-单击New York Taxi Boards，出现以下界面
+单击New York Taxi Boards，出现以下界面。
 
 ![New York Taxi data](../assets/nyc-demo.png)
 
-如果你可以看到以上界面，说明 Infini 可视化组件已经成功启动了  
+如果你可以看到以上界面，说明 Infini 可视化组件已经成功启动了。
 
 
 
