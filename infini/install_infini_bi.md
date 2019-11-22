@@ -11,7 +11,7 @@ label2: "Infini"
 
 - [安装前提](#安装前提)
 - [使用 Docker Compose 运行 Infini](#使用-Docker-Compose-运行-Infini)
-- [可视化界面](#可视化界面)
+- [登录 Infini 可视化界面](#登录-Infini-可视化界面)
 - [填写 MegaWise 数据库信息](#填写-MegaWise-数据库信息)
 - [关闭 Infini 可视化交互分析界面](#关闭-Infini-可视化交互分析界面)
 
@@ -36,9 +36,11 @@ label2: "Infini"
    ```
 
     如果终端能够显示 docker-compose 的版本信息，则说明系统中已经安装有对应版本的 docker-compose。在如下的示例中 docker-compose 的版本为1.24.1。
-    ```
+
+    ```bash
     docker-compose version 1.24.1, build 4667896b
     ```
+
 2. 下载两个配置文件到同一文件目录。
 
    ```bash
@@ -48,7 +50,7 @@ label2: "Infini"
 
 3. 修改 `.env` 文件。
 
-   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 IP 地址。</font>
+   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行 MegaWise docker 的服务器 IP 地址。</font>
 
    ```yml
    # 默认API服务地址
@@ -83,7 +85,7 @@ label2: "Infini"
    ```
 
 
-6. 打开任意浏览器，优先支持 Chrome 和 Firefox。
+6. 打开任意浏览器，推荐 Chrome 和 Firefox。
 
    ```shell
    # 如果修改了80端口，请加上端口号
@@ -92,7 +94,7 @@ label2: "Infini"
 
 
 
-## 可视化界面
+## 登录 Infini 可视化界面
 
 现在可以看到登录界面
 
@@ -110,12 +112,11 @@ label2: "Infini"
 
 ![dashboard-list](../assets/dashboard-list.png)
 
-单击New York Taxi Boards，出现以下界面。
+单击 `New York Taxi Boards`，出现以下界面。
 
 ![New York Taxi data](../assets/nyc-demo.png)
 
-如果你可以看到以上界面，说明 Infini 可视化组件已经成功启动了。
-
+如果您可以看到以上界面，说明 Infini 可视化组件已经成功启动了。
 
 
 ## 关闭 Infini 可视化交互分析界面
