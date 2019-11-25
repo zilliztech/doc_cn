@@ -23,7 +23,7 @@ label2: "Infini"
    - [Docker 19.03 or higher](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
    - [Docker Compose](https://docs.docker.com/compose/install/)
 2. 请确认已安装 MegaWise，开启 MegaWise 服务并导入示例数据。
-   - [安装 MegaWise](https://www.zilliz.com/cn/docs/install_infini)
+   - [安装 MegaWise](./install_megawise)
 
 
 
