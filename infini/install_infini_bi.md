@@ -106,6 +106,7 @@ label2: "Infini"
 - 密码: zilliz
 
 ## 填写 MegaWise 数据库信息
+
 登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面。
 
 ![fill-megawise-info](../assets/fill-megawise-info.png)
