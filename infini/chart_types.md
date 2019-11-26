@@ -26,8 +26,8 @@ lang: "cn"
 ## 表格
 ![表格](../assets/table.png)
 
-## 线图
-![线图](../assets/line.png)
+## 折线图
+![折线图](../assets/line.png)
 
 ## 饼图
 ![饼图](../assets/pie.png)
@@ -41,5 +41,5 @@ lang: "cn"
 ## 点地图
 ![点地图](../assets/pointmap.png)
 
-## 热力图
-![热力图](../assets/heatmap.png)
+## 热力地图
+![热力地图](../assets/heatmap.png)
