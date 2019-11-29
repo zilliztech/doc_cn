@@ -11,15 +11,6 @@ label2: "MegaWise"
 
 本文档主要介绍 MegaWise Docker 的安装和配置等操作。
 
-- [**安装前提**](#安装前提)
-  - [**安装 NVIDIA 驱动**](#安装-NVIDIA-驱动)
-  - [**安装 Docker**](#安装-Docker)
-  - [**安装 NVIDIA container toolkit**](#安装-NVIDIA-container-toolkit)
-- [**安装 MegaWise**](#安装-MegaWise)
-  - [**自动安装 MegaWise 并导入示例数据**](#自动安装-MegaWise-并导入示例数据)
-  - [**手动安装 MegaWise**](#手动安装-MegaWise)
-
-
 
 ## 安装前提
 
@@ -235,7 +226,7 @@ label2: "MegaWise"
    示例：
    
    ```bash
-   $ ./install_megawise.sh  /home/$USER/megawise '0.4.2'
+   $ ./install_megawise.sh  /home/$USER/megawise '0.5.0'
    ```
    
    该语句所执行的操作如下：
