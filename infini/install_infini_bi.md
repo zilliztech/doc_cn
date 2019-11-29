@@ -18,7 +18,7 @@ label2: "Infini"
 
 
 
-## 使用 Docker Compose 运行 Infini 
+## 使用 Docker Compose 运行 Infini 界面
 
 1. 确保 docker-compose 正在运行。 
 
@@ -41,7 +41,7 @@ label2: "Infini"
 
 3. 修改 `.env` 文件。
 
-   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行 MegaWise docker 的服务器 IP 地址。</font>
+   > 注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行 MegaWise docker 的服务器 IP 地址。
 
    ```yml
    # 默认API服务地址
@@ -84,34 +84,25 @@ label2: "Infini"
    ```
 
 
+## 设置 Infini 界面
 
-## 登录 Infini 可视化界面
 
-现在可以看到登录界面
+1. 在登录界面上，输入用户名和密码进行登录：
 
-![login](../assets/Login.png)
+   - 默认用户名: zilliz
+   - 默认密码: zilliz
 
-**输入用户名和密码进行登录：**
+2. 登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面。
 
-- 用户名: zilliz
-- 密码: zilliz
 
-## 填写 MegaWise 数据库信息
-
-登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面。
-
-![fill-megawise-info](../assets/fill-megawise-info.png)
-
-![dashboard-list](../assets/dashboard-list.png)
-
-单击 `New York Taxi Boards`，出现以下界面。
+3. 单击 **New York Taxi Boards**，出现以下界面：
 
 ![New York Taxi data](../assets/nyc-demo.png)
 
-如果您可以看到以上界面，说明 Infini 可视化组件已经成功启动了。
+如果您可以看到以上界面，说明 Infini 界面已经成功启动了。
 
 
-## 关闭 Infini 可视化交互分析界面
+4. 使用以下命令关闭 Infini 界面。
 
 ```bash
 # Stop Infini
