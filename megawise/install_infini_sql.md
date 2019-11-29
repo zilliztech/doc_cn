@@ -10,18 +10,6 @@ label2: "MegaWise"
 
 本文档主要介绍 MegaWise Docker 的安装和配置等操作。
 
-<!-- TOC -->
-
-- [安装前提](#安装前提)
-    - [硬件要求](#硬件要求)
-    - [软件要求](#软件要求)
-    - [安装 NVIDIA 驱动](#安装-NVIDIA-驱动)
-    - [安装 Docker](#安装-Docker)
-    - [安装 NVIDIA container toolkit](#安装-NVIDIA-container-toolkit)
-- [自动安装 MegaWise 并导入示例数据](#自动安装-MegaWise-并导入示例数据)
-- [手动安装 MegaWise](#手动安装-MegaWise)
-
-<!-- /TOC -->
 
 ## 安装前提
 
@@ -220,8 +208,8 @@ label2: "MegaWise"
 1. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
    ```bash
-   $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/script/data_import.sh \
-   https://raw.githubusercontent.com/Infini-Analytics/infini/master/script/install_megawise.sh
+   $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/script/data_import.sh \
+   https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/script/install_megawise.sh
    $ chmod a+x *.sh
    ```
    
@@ -289,10 +277,10 @@ label2: "MegaWise"
 
     ```bash
     $ cd $WORK_DIR/conf
-    $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/chewie_main.yaml \
-    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/etcd.yaml \
-    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/megawise_config_template.yaml \
-    https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/db/render_engine.yaml
+    $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/chewie_main.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/etcd.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/megawise_config_template.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/render_engine.yaml
     ```
 
 6. 根据 MegaWise 所在的服务器环境修改配置文件。

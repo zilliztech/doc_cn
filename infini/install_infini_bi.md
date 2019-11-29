@@ -7,15 +7,6 @@ label2: "Infini"
 ---
 # 安装 Infini 可视化交互分析界面
 
-<!-- TOC -->
-
-- [安装前提](#安装前提)
-- [使用 Docker Compose 运行 Infini](#使用-Docker-Compose-运行-Infini)
-- [可视化界面](#可视化界面)
-- [填写 MegaWise 数据库信息](#填写-MegaWise-数据库信息)
-- [关闭 Infini 可视化交互分析界面](#关闭-Infini-可视化交互分析界面)
-
-<!-- /TOC -->
 
 ## 安装前提
 
