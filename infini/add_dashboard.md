@@ -1,13 +1,10 @@
 ---
 id: "add_dashboard"
 lang: "cn"
-title: "添加仪表盘和图表"
-label1: "用户手册"
-label2: "Infini"
 ---
 # 添加仪表盘和图表
 
-1. 在 Infini 界面的仪表盘选项卡上点击 **新增仪表盘** 按钮来添加新的仪表盘。
+1. 在 Infini 界面的仪表盘选项卡上点击 **新建仪表盘** 按钮来添加新的仪表盘。
 
     ![添加仪表盘](../assets/dashboard-list.png)
 
@@ -29,4 +26,4 @@ label2: "Infini"
 
     ![add chart](../assets/add-chart.png)
 
-
+3. 图表设置完成后，点击 **应用** 即可将图表保存到仪表盘。
