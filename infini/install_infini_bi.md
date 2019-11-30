@@ -33,8 +33,8 @@ label2: "Infini"
 2. 下载两个配置文件到同一文件目录
 
    ```bash
-   $ wget https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/webserver/.env \
-   https://raw.githubusercontent.com/Infini-Analytics/infini/master/config/webserver/docker-compose.yml
+   $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/webserver/.env \
+   https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/webserver/docker-compose.yml
    ```
 
 3. 修改 `.env` 文件
