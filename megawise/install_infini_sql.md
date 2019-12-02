@@ -381,9 +381,9 @@ label2: "MegaWise"
     ```
     > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
-        ```bash
+      ```bash
         $ sudo docker image ls
-        ```
+      ```
 
     参数说明
 
