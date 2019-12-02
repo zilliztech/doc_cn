@@ -1,5 +1,5 @@
 ---
-id: "release_notes_0.5.0"
+id: "release_notes_content"
 lang: "cn"
 title: "0.5.0 发布说明"
 label1: "发布说明"
