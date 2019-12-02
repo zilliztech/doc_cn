@@ -148,7 +148,7 @@
       },
       {
         "id": "add_dashboard",
-        "title": "添加新的仪表盘",
+        "title": "添加仪表盘和图表",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "Infini 可视化交互界面",
@@ -157,7 +157,7 @@
       },
       {
         "id": "chart_types",
-        "title": "图表类型和参数设置",
+        "title": "图表类型及参数说明",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "Infini 可视化交互界面",
