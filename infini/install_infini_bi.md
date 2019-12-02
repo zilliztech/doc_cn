@@ -13,8 +13,10 @@ label2: "Infini"
 1. 请确认已安装以下软件。
    - [Docker 19.03 or higher](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
    - [Docker Compose](https://docs.docker.com/compose/install/)
+
 2. 请确认已安装 MegaWise，开启 MegaWise 服务并导入示例数据。
    - [安装 MegaWise](./install_megawise)
+
 
 
 
@@ -37,6 +39,7 @@ label2: "Infini"
    ```bash
    $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/webserver/.env \
    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/webserver/docker-compose.yml
+
    ```
 
 3. 修改 `.env` 文件。
