@@ -39,9 +39,8 @@ label2: "Infini"
 
 3. 修改 `.env` 文件
 
-   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 ip 地址
-   >
-   > 请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 ip 地址。</font>
+   > 注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址
+   > 请把 `192.168.1.106` 改成当前运行 MegaWise docker 的服务器 IP 地址。
 
    ```yml
    # 默认API服务地址
@@ -68,9 +67,9 @@ label2: "Infini"
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 ip 地址
+   > 注意: 请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址
    >
-   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
+   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 
 
    ```shell
     #/etc/hosts
