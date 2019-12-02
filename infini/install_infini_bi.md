@@ -10,38 +10,41 @@ label2: "Infini"
 
 ## 安装前提
 
-1. 请确认已安装以下软件
+1. 请确认已安装以下软件。
    - [Docker 19.03 or higher](https://docs.docker.com/engine/installation/linux/docker-ce/ubuntu/)
    - [Docker Compose](https://docs.docker.com/compose/install/)
-2. 请确认已安装 MegaWise ，开启MegaWise服务并导入示例数据
-   - [安装 Megawise](https://www.zilliz.com/cn/docs/install_megawise)
+
+2. 请确认已安装 MegaWise，开启 MegaWise 服务并导入示例数据。
+   - [安装 MegaWise](./install_megawise)
 
 
 
-## 使用 Docker Compose 运行 Infini 
 
-1. 确保 docker-compose 正在运行 
+## 使用 Docker Compose 运行 Infini 界面
+
+1. 确保 docker-compose 正在运行。 
 
    ```bash
    $ docker-compose --version
    ```
 
     如果终端能够显示 docker-compose 的版本信息，则说明系统中已经安装有对应版本的 docker-compose。在如下的示例中 docker-compose 的版本为1.24.1。
-    ```
+
+    ```bash
     docker-compose version 1.24.1, build 4667896b
     ```
-2. 下载两个配置文件到同一文件目录
+
+2. 下载两个配置文件到同一文件目录。
 
    ```bash
-   $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/webserver/.env \
-   https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/webserver/docker-compose.yml
+   $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/webserver/.env \
+   https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/webserver/docker-compose.yml
+
    ```
 
-3. 修改 `.env` 文件
+3. 修改 `.env` 文件。
 
-   > <font color='red'>注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 ip 地址
-   >
-   > 请把 `192.168.1.106` 改成当前运行MegaWise docker 的服务器 ip 地址。</font>
+   > 注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行 MegaWise docker 的服务器 IP 地址。
 
    ```yml
    # 默认API服务地址
@@ -60,7 +63,7 @@ label2: "Infini"
    MEGAWISE_PORT=5433
    ```
 
-4. 启动 Infini web server
+4. 启动 Infini web server。
 
    ```shell
    # start Infini
@@ -68,9 +71,7 @@ label2: "Infini"
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 ip 地址
-   >
-   >  若使用windows系统查看Infini界面，则在C:\Windows\System32\drivers\etc\hosts文件中添加 </font>
+   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 IP 地址。若使用 Windows 系统查看 Infini 界面，则在`C:\Windows\System32\drivers\etc\hosts` 文件中添加 </font>
 
    ```shell
     #/etc/hosts
@@ -78,7 +79,7 @@ label2: "Infini"
    ```
 
 
-6. 打开任意浏览器，优先支持 Chrome 和 Firefox
+6. 打开任意浏览器，推荐 Chrome 和 Firefox。
 
    ```shell
    # 如果修改了80端口，请加上端口号
@@ -86,34 +87,25 @@ label2: "Infini"
    ```
 
 
+## 设置 Infini 界面
 
-## 可视化界面
 
-现在可以看到登录界面
+1. 在登录界面上，输入用户名和密码进行登录：
 
-![login](../assets/Login.png)
+   - 默认用户名: zilliz
+   - 默认密码: zilliz
 
-**输入用户名和密码进行登录：**
+2. 登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面。
 
-- 用户名: zilliz
-- 密码: zilliz
 
-## 填写 MegaWise 数据库信息
-登录后，输入相关信息后，点击保存，界面就会跳转到仪表盘页面
-
-![fill-megawise-info](../assets/fill-megawise-info.png)
-
-![dashboard-list](../assets/dashboard-list.png)
-
-单击New York Taxi Boards，出现以下界面
+3. 单击 **New York Taxi Boards**，出现以下界面：
 
 ![New York Taxi data](../assets/nyc-demo.png)
 
-如果你可以看到以上界面，说明 Infini 可视化组件已经成功启动了  
+如果您可以看到以上界面，说明 Infini 界面已经成功启动了。
 
 
-
-## 关闭 Infini 可视化交互分析界面
+4. 使用以下命令关闭 Infini 界面。
 
 ```bash
 # Stop Infini

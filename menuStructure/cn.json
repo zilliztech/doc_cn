@@ -157,7 +157,7 @@
       },
       {
         "id": "chart_types",
-        "title": "图表类型",
+        "title": "图表类型和参数设置",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "Infini 可视化交互界面",
@@ -185,7 +185,7 @@
       },
       {
         "id": "release_notes_0.4.0",
-        "title": "0.4.0 发布说明",
+        "title": "0.5.0 发布说明",
         "lang": "cn",
         "label1": "发布说明",
         "label2": "",

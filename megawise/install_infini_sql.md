@@ -6,6 +6,7 @@ label1: "用户手册"
 label2: "MegaWise"
 ---
 
+
 # 安装 MegaWise
 
 本文档主要介绍 MegaWise Docker 的安装和配置等操作。
@@ -74,7 +75,7 @@ label2: "MegaWise"
 
 2. 从 [NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us) 下载最新版本的驱动安装文件。
 
-   > <font color='red'>注意：安装或更新 NVIDIA 驱动存在一定风险，有可能导致显示系统崩溃。在安装或更新 NVIDIA 驱动前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用最新版本的 NVIDIA 驱动。</font>
+   > 注意：安装或更新 NVIDIA 驱动存在一定风险，有可能导致显示系统崩溃。在安装或更新 NVIDIA 驱动前，请在[NVIDIA官方驱动下载链接](https://www.nvidia.com/Download/index.aspx?lang=en-us)检查您的显卡是否适用最新版本的 NVIDIA 驱动。
 
 3. 安装NVIDIA驱动需要先关闭图形界面， 按 Ctrl+Alt+F1 进入命令行界面，并执行以下命令关闭图形界面。
 
@@ -120,7 +121,6 @@ label2: "MegaWise"
    | 28%   49C    P0    24W / 130W |   2731MiB /  5941MiB |      1%      Default |
    +-------------------------------+----------------------+----------------------+
    ```
-
 ### 安装 Docker
 
 1. 更新源。
@@ -208,8 +208,8 @@ label2: "MegaWise"
 1. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
    ```bash
-   $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/script/data_import.sh \
-   https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/script/install_megawise.sh
+   $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/script/data_import.sh \
+   https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/script/install_megawise.sh
    $ chmod a+x *.sh
    ```
    
@@ -221,12 +221,12 @@ label2: "MegaWise"
 
    > 参数1：MegaWise 安装目录的绝对路径，请确保该目录不存在，并且当前用户对该目录有读写权限。
    
-   > 参数2：MegaWise 镜像id，可选，默认'0.4.2'
+   > 参数2：MegaWise 镜像id，可选，默认'0.5.0'
    
    示例：
    
    ```bash
-   $ ./install_megawise.sh  /home/$USER/megawise '0.4.2'
+   $ ./install_megawise.sh  /home/$USER/megawise '0.5.0'
    ```
    
    该语句所执行的操作如下：
@@ -259,7 +259,7 @@ label2: "MegaWise"
     $ sudo apt-get install postgresql-client-11
     ```
 
-    PostgreSQL 客户端默认安装路径是/usr/lib/postgresql/11/bin/，安装完成后执行 `which psql` 命令，如果没有输出 PostgreSQL 客户端程序的正确路径，需要手动将安装路径加到环境变量中。
+    PostgreSQL 客户端默认安装路径是`/usr/lib/postgresql/11/bin/`，安装完成后执行 `which psql` 命令，如果没有输出 PostgreSQL 客户端程序的正确路径，需要手动将安装路径加到环境变量中。
 
     ```bash
     $ export PATH=/usr/lib/postgresql/11/bin:$PATH
@@ -277,35 +277,35 @@ label2: "MegaWise"
 
     ```bash
     $ cd $WORK_DIR/conf
-    $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/chewie_main.yaml \
-    https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/etcd.yaml \
-    https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/megawise_config_template.yaml \
-    https://raw.githubusercontent.com/zilliztech/infini/v0.4.0/config/db/render_engine.yaml
+    $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/user_config.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/etcd.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/megawise_config_template.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/etcd_config_template.yaml
     ```
 
 6. 根据 MegaWise 所在的服务器环境修改配置文件。
 
-   1. 打开 `conf` 目录下面的 `chewie_main.yaml` 配置文件。
+   1. 打开 `conf` 目录下面的 `user_config.yaml` 配置文件。
 
        1. 定位到如下片段：
 
       ```yaml
-      cache:  # size in GB
+      memory:  
         cpu:
-            physical_memory: 16
-            partition_memory: 16
-      
+          physical_memory: 16 # size in GB
+          partition_memory: 16 # size in GB
+        
         gpu:
-            gpu_num: 2
-            physical_memory: 2
-            partition_memory: 2 
+          num: 2
+          physical_memory: 2  # size in GB
+          partition_memory: 2 # size in GB
       ```
 
       根据服务器的硬件配置，对上述的配置项进行设置（数值单位为 GB ）。
 
       `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器物理内存总量的70%以上；
    
-      `gpu` 部分，`gpu_num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
+      `gpu` 部分，`num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
       
    
     2. 打开 `conf` 目录下面的 `megawise_config_template.yaml` 配置文件。
@@ -317,16 +317,16 @@ label2: "MegaWise"
                 bitcode_lib: @bitcode_lib@
                 precompile: true
                 stage:
-                    build_task_context_parallelism: 1
-                    fetch_meta_parallelism: 1
-                    compile_parallelism: 1
-                    fetch_data_parallelism: 1
-                    compute_parallelism: 1
-                    output_parallelism: 1
+                  build_task_context_parallelism: 1
+                  fetch_meta_parallelism: 1
+                  compile_parallelism: 1
+                  fetch_data_parallelism: 1
+                  compute_parallelism: 1
+                  output_parallelism: 1
                 worker_num : 2
                 gpu:
-                    physical_memory: 2    # unit: GB
-                    partition_memory: 2   # unit: GB
+                  physical_memory: 2    # unit: GB
+                  partition_memory: 2   # unit: GB
                 cuda_profile_query_cnt: -1 #-1 means don't profile, positive integer means the number of queries to profile, other value invalid
             ```
 
@@ -334,9 +334,9 @@ label2: "MegaWise"
 
             | 参数                     | 值                   |
             |--------------------------|-------------------------|
-            | `worker_num` |  `chewie_main.yaml` 中的 `gpu_num` 值            |
-            | `physical_memory` |  `chewie_main.yaml` 中的 `physical_memory` 值            |
-            | `partition_memory` |  `chewie_main.yaml` 中的 `partition_memory` 值           |
+            | `worker_num` |  `user_config.yaml` 中的 `gpu_num` 值            |
+            | `physical_memory` |  `user_config.yaml` 中的 `physical_memory` 值            |
+            | `partition_memory` |  `user_config.yaml` 中的 `partition_memory` 值           |
 
         2. 定位到如下片段并设置相关参数。
 
@@ -357,12 +357,20 @@ label2: "MegaWise"
             `dict_config` 中的 `cache_size` 表示用于字符串字典编码的内存总量，单位为字节。
 
             `hash_config` 中的 `cache_size` 表示用于字符串哈希编码的内存总量，单位为字节。
+    
+    3. 打开 `data` 目录下面的 `postgresql.conf` 配置文件并将 `listen_addresses` 参数的值设置为 `*`。
 
+    4. 打开 `data` 目录下面的 `pg_hba.conf` 配置文件并在 `# IPv4 local connections` 下方添加如下行：
+
+        ```bash
+        host   all      all     0.0.0.0/0      trust
+        ```
 
 7. 启动 MegaWise。
 
     ```bash
     $ sudo docker run --gpus all --shm-size 17179869184 \
+                            -e USER=`id -u` -e GROUP=`id -g` \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
                             -v $WORK_DIR/logs:/megawise/logs \
@@ -371,18 +379,29 @@ label2: "MegaWise"
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
+    > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+
+      ```bash
+        $ sudo docker image ls
+      ```
 
     参数说明
 
     > `--shm-size`
 
-      Docker image 运行时系统分配的内存大小，改值取 `chewie_main.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
+      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
 
     > `-v`
 
       宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
 
       在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
+    
+    > `-e`
+
+      宿主机和 image 之间的用户和组映射。
+
+      在启动容器时可以通过 `-e` 将本地用户和组信息映射到容器内，以实现本地和容器中运行时的权限统一。
 
     > `-p`
 
@@ -397,7 +416,18 @@ label2: "MegaWise"
 8. 操作 MegaWise。
   
     ```bash
-    $ psql -U zilliz -p 5433 -h $IP_ADDR -d postgres
+    $ psql -U $USER_ID -p 5433 -h $IP_ADDR -d postgres
+    ```
+
+    > `$USER_ID` 可以通过以下命令得到：
+
+    ```bash
+    $ id -u
+    ```
+    > `$IP_ADDR` 可以通过以下命令得到：
+
+    ```bash
+    $ ifconfig
     ```
 
     MegaWise 的 docker 启动后会内置一个默认数据库 `postgres` ，在该数据库上会创建一个默认用户 `zilliz` ，接下来会提示输入密码，默认 `zilliz` 。
@@ -412,4 +442,4 @@ label2: "MegaWise"
 
     就说明成功连接上 MegaWise 了。
 
-    >注意：如果连接超时，建议检查防火墙设置是否正确。
+    > 注意：如果连接超时，建议检查防火墙设置是否正确。MegaWise 当前版本不提供数据持久化功能，建议每次重启后重新进行数据导入。
