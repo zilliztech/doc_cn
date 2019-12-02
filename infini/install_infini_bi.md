@@ -71,7 +71,7 @@ label2: "Infini"
    ```
 
 5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > <font color='red'>注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 IP 地址。若使用 Windows 系统查看 Infini 界面，则在`C:\Windows\System32\drivers\etc\hosts` 文件中添加 </font>
+   > 注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 IP 地址。若使用 Windows 系统查看 Infini 界面，则在`C:\Windows\System32\drivers\etc\hosts` 文件中添加。
 
    ```shell
     #/etc/hosts
