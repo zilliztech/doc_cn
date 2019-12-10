@@ -408,16 +408,26 @@ title: "安装 MegaWise"
     ```bash
     MegaWise server is running...
     ```
-    
-> 注意：如果您需要从 Docker 外部连接 MegaWise，请参考[从 Docker 外部连接 MegaWise](从-Docker-外部连接-MegaWise)。如果您需要从 Docker 内部连接 MegaWise，请继续以下步骤：
 
- 8. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
+### 从 Docker 内部连接 MegaWise
+
+ 1. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
  
     ```shell
     $ sudo docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
     $ cd script && ./connect.sh
     ```   
-    
+    MegaWise 的 docker 启动后会内置一个默认数据库 `postgres` ，在该数据库上会创建一个默认用户 `zilliz` ，接下来会提示输入密码，默认 `zilliz` 。
+    如果出现以下信息：
+
+    ```bash
+    psql (11.1)
+    Type "help" for help.
+
+    postgres=>
+    ```
+
+    就说明成功连接上 MegaWise 了。
     
 ### 从 Docker 外部连接 MegaWise 
 
