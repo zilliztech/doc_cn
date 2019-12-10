@@ -1,6 +1,7 @@
 ---
 id: "install_megawise"
 lang: "cn"
+label: "安装 MegaWise"
 ---
 
 
