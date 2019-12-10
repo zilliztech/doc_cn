@@ -226,6 +226,7 @@ lang: "cn"
    ```bash
    $ ./install_megawise.sh  /home/$USER/megawise '0.5.0'
    ```
+   > 注意：如果您是非 root 用户，您必须将用户加入 docker 用户组才能成功执行该脚本。详细信息请参考 [https://docs.docker.com/install/linux/linux-postinstall/](https://docs.docker.com/install/linux/linux-postinstall/)。
    
    该语句所执行的操作如下：
 
