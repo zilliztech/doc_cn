@@ -204,7 +204,7 @@ title: "安装 MegaWise"
 
 ## 自动安装 MegaWise 并导入示例数据
 
-> 注意：自动安装仅用于功能展示。如果您需要部署到生产环境，请使用[手动安装](##-手动安装-MegaWise)。
+> 注意：自动安装仅用于功能展示。如果您需要部署到生产环境，请使用[手动安装](##手动安装-MegaWise)。
 
 1. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
@@ -415,7 +415,7 @@ title: "安装 MegaWise"
  
     ```shell
     $ sudo docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
-    $ cd scripts && ./connect.sh
+    $ cd script && ./connect.sh
     ```   
     
     
