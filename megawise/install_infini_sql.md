@@ -415,7 +415,7 @@ title: "安装 MegaWise"
  
     ```shell
     $ sudo docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
-    $ cd scripts && ./connect.sh
+    $ cd script && ./connect.sh
     ```   
     
     
