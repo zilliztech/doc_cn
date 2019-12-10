@@ -1,9 +1,6 @@
 ---
 id: "install_megawise"
 lang: "cn"
-title: "安装 MegaWise"
-label1: "用户手册"
-label2: "MegaWise"
 ---
 
 
@@ -28,7 +25,7 @@ label2: "MegaWise"
 
 | 组件                     | 版本                    |
 |--------------------------|-------------------------|
-| 操作系统                 | Ubuntu 16.04 或以上 |
+| 操作系统                 | 仅支持 Ubuntu 16.04  |
 | NVIDIA 驱动          | 410 或以上，推荐最新版本          |
 | Docker                   | 19.03 或以上         |
 | NVIDIA Container Toolkit |  1.0.5-1 或以上            |
