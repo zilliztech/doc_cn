@@ -204,6 +204,8 @@ title: "安装 MegaWise"
 
 ## 自动安装 MegaWise 并导入示例数据
 
+> 注意：自动安装仅用于功能展示。如果您需要部署到生产环境，请使用[手动安装](##-手动安装-MegaWise)。
+
 1. 下载脚本 `install_megawise.sh` 和 `data_import.sh` 至同一目录，并确保当前用户对两个脚本有可执行权限。
 
    ```bash
@@ -358,13 +360,7 @@ title: "安装 MegaWise"
 
             `hash_config` 中的 `cache_size` 表示用于字符串哈希编码的内存总量，单位为字节。
     
-    3. 打开 `data` 目录下面的 `postgresql.conf` 配置文件并将 `listen_addresses` 参数的值设置为 `*`。
-
-    4. 打开 `data` 目录下面的 `pg_hba.conf` 配置文件并在 `# IPv4 local connections` 下方添加如下行：
-
-        ```bash
-        host   all      all     0.0.0.0/0      trust
-        ```
+  
 
 7. 启动 MegaWise。
 
@@ -412,8 +408,41 @@ title: "安装 MegaWise"
     ```bash
     MegaWise server is running...
     ```
+    
+> 注意：如果您需要从 Docker 外部连接 MegaWise，请参考[从 Docker 外部连接 MegaWise](从-Docker-外部连接-MegaWise)。如果您需要从 Docker 内部连接 MegaWise，请继续以下步骤：
 
-8. 操作 MegaWise。
+ 8. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
+ 
+    ```shell
+    $ sudo docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
+    $ cd scripts && ./connect.sh
+    ```   
+    
+    
+### 从 Docker 外部连接 MegaWise 
+
+1. 关闭 MegaWise。
+
+    ```bash
+    $ sudo docker stop <$MegaWise_Container_ID>
+    ```
+
+2. 进入 MegaWise 的工作目录并进行以下修改： 
+
+    1. 打开 `data` 目录下面的 `postgresql.conf` 配置文件并将 `listen_addresses` 参数的值设置为 `*`。
+
+    2. 打开 `data` 目录下面的 `pg_hba.conf` 配置文件并在 `# IPv4 local connections` 下方添加如下行：
+
+        ```bash
+        host   all      all     0.0.0.0/0      trust
+        ```
+3. 重新启动 MegaWise。
+
+    ```bash
+    $ sudo docker start <$MegaWise_Container_ID>
+    ```
+
+4. 操作 MegaWise。
   
     ```bash
     $ psql -U $USER_ID -p 5433 -h $IP_ADDR -d postgres
