@@ -19,30 +19,6 @@ label2: "MegaWise"
 ## 基本操作
 
 
-### 使用 psql 客户端连接 MegaWise
-
-
-通过以下命令使用 psql 客户端连接 MegaWise ：
-
-```bash
-$ psql -U zilliz -p 5433 -h $IP_ADDR -d postgres 
-``` 
-
-其中 -U 参数指定连接 MegaWise 所使用的用户名，-p 参数指定 MegaWise 的服务端口， -h 参数指定 MegaWise 所在服务器的 IP 地址，-d 参数指定所连接的数据库名称。
-
-MegaWise 服务启动后会内置一个默认数据库 `postgres` ，在该数据库上会创建一个默认用户 `zilliz` ，接下来会提示输入密码，默认 `zilliz` 。 如果出现以下信息： 
-
-```bash 
-$ psql (11.1) Type "help" for help. postgres=> 
-```
-
-就说明成功连接上 MegaWise 了。 
-
->注意：如果连接超时，建议检查防火墙设置是否正确。
-
-
-
-
 ### 创建一个数据库
 
 MegaWise 系统可以管理多个数据库。 通常我们会为每个项目和每个用户单独创建一个数据库。数据库名必须是以字母开头并且长度小于 63 个字符。
