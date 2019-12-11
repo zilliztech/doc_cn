@@ -440,9 +440,9 @@ title: "安装 MegaWise"
 
 2. 进入 MegaWise 的工作目录并进行以下修改： 
 
-    1. 打开 `data` 目录下面的 `postgresql.conf` 配置文件并将 `listen_addresses` 参数的值设置为 `*`。
+    1. 打开 `data` 目录下面的 `postgresql.conf` 配置文件。将 `listen_addresses` 参数的值设置为 `'*'`（注意引号）并取消此行的注释。
 
-    2. 打开 `data` 目录下面的 `pg_hba.conf` 配置文件并在 `# IPv4 local connections` 下方添加如下行：
+    2. 打开 `data` 目录下面的 `pg_hba.conf` 配置文件。在 `# IPv4 local connections` 下方添加如下行：
 
         ```bash
         host   all      all     0.0.0.0/0      trust
