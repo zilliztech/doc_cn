@@ -448,9 +448,9 @@ title: "安装 MegaWise"
         ```
  3. 重新启动 MegaWise。
 
-   > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
+    > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
 
-     ```bash
+    ```bash
     $ sudo docker run --gpus all --shm-size 17179869184 \
                             -e USER=`id -u` -e GROUP=`id -g` \
                             -v $WORK_DIR/conf:/megawise/conf \
@@ -461,11 +461,12 @@ title: "安装 MegaWise"
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
+    
     > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
-      ```bash
-        $ sudo docker image ls
-      ```
+    ```bash
+    $ sudo docker image ls
+    ```
 
     参数说明
 
@@ -493,6 +494,7 @@ title: "安装 MegaWise"
 
     ```bash
     MegaWise server is running...
+    ```
 
  4. 操作 MegaWise。
   
@@ -524,7 +526,7 @@ title: "安装 MegaWise"
 
     > 注意：如果连接超时，建议检查防火墙设置是否正确。MegaWise 当前版本不提供数据持久化功能，建议每次重启后重新进行数据导入。
     
-## 创建 MegaWise 用户连接 Infini 可视化界面
+## 创建 MegaWise 用户以连接 Infini 可视化界面
     
 如果您需要和 Infini 可视化界面进行连接，请在 postgres 数据库中创建一个用户，用户名为 `zilliz`，密码为 `zilliz`。
     
