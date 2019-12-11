@@ -282,7 +282,8 @@ title: "安装 MegaWise"
     $ wget https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/user_config.yaml \
     https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/etcd.yaml \
     https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/megawise_config_template.yaml \
-    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/etcd_config_template.yaml
+    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/etcd_config_template.yaml \
+    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/megawise_config.yaml
     ```
 
 6. 根据 MegaWise 所在的服务器环境修改配置文件。
