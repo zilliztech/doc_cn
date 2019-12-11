@@ -243,10 +243,10 @@ label2: "MegaWise"
 
 1. 在 [docker hub](https://hub.docker.com/r/zilliz/megawise/tags) 查询最新的 MegaWise 版本号。
 
-2. 执行以下命令获得最新版本的 MegaWise 的 docker 镜像。
+2. 执行以下命令获得 0.4.2 版本的 MegaWise 的 docker 镜像。
 
     ```bash
-    $ sudo docker pull zilliz/megawise:$LATEST_VERSION
+    $ sudo docker pull zilliz/megawise:0.4.2
     ```
 
 3. 安装 PostgreSQL 客户端。
