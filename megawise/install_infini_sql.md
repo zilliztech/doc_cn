@@ -524,12 +524,12 @@ title: "安装 MegaWise"
 
     > 注意：如果连接超时，建议检查防火墙设置是否正确。MegaWise 当前版本不提供数据持久化功能，建议每次重启后重新进行数据导入。
     
-    ## 创建 MegaWise 用户连接 Infini 可视化界面
+## 创建 MegaWise 用户连接 Infini 可视化界面
     
-    如果您需要和 Infini 可视化界面进行连接，请在 postgres 数据库中创建一个用户，用户名为 `zilliz`，密码为 `zilliz`。
+如果您需要和 Infini 可视化界面进行连接，请在 postgres 数据库中创建一个用户，用户名为 `zilliz`，密码为 `zilliz`。
     
-    ```sql
-    postgres=# CREATE USER zilliz WITH PASSWORD 'zilliz';
-    postgres=# grant all privileges on database postgres to zilliz;
-    ```
+   ```sql
+   postgres=# CREATE USER zilliz WITH PASSWORD 'zilliz';
+   postgres=# grant all privileges on database postgres to zilliz;
+   ```
     
