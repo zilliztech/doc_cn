@@ -70,16 +70,8 @@ label2: "Infini"
    $ docker-compose -f docker-compose.yml up
    ```
 
-5. 修改 host，打开 `/etc/hosts` 文件，添加以下一条
-   > 注意: 请把 `192.168.1.60` 改成当前运行Infini docker 的服务器 IP 地址。若使用 Windows 系统查看 Infini 界面，则在`C:\Windows\System32\drivers\etc\hosts` 文件中添加。
 
-   ```shell
-    #/etc/hosts
-    192.168.1.60 infini
-   ```
-
-
-6. 打开任意浏览器，推荐 Chrome 和 Firefox。
+5. 打开任意浏览器，推荐 Chrome 和 Firefox。
 
    ```shell
    # 如果修改了80端口，请加上端口号
