@@ -220,9 +220,9 @@ title: "安装 MegaWise"
    $ ./install_megawise.sh [参数1，必选] [参数2，可选]
    ```
 
-   > 参数1：MegaWise 安装目录的绝对路径，请确保该目录不存在，并且当前用户对该目录有读写权限。
+   > 参数1：MegaWise 安装目录的绝对路径或相对路径，请确保该目录不存在，并且当前用户对该目录有读写权限。您不能通过加 `sudo` 的方式将当前用户没有读写权限的目录设为安装路径。
    
-   > 参数2：MegaWise 镜像id，可选，默认'0.5.0'
+   > 参数2：MegaWise 镜像id，可选，默认'0.5.0'。
    
    示例：
    
@@ -448,9 +448,51 @@ title: "安装 MegaWise"
         ```
 3. 重新启动 MegaWise。
 
-    ```bash
-    $ sudo docker start <$MegaWise_Container_ID>
+   > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
+
+     ```bash
+    $ sudo docker run --gpus all --shm-size 17179869184 \
+                            -e USER=`id -u` -e GROUP=`id -g` \
+                            -v $WORK_DIR/conf:/megawise/conf \
+                            -v $WORK_DIR/data:/megawise/data \
+                            -v $WORK_DIR/logs:/megawise/logs \
+                            -v $WORK_DIR/server_data:/megawise/server_data \
+                            -v /home/$USER/.nv:/home/megawise/.nv \
+                            -p 5433:5432 \
+                            $IMAGE_ID
     ```
+    > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+
+      ```bash
+        $ sudo docker image ls
+      ```
+
+    参数说明
+
+    > `--shm-size`
+
+      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
+
+    > `-v`
+
+      宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
+
+      在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
+    
+    > `-e`
+
+      宿主机和 image 之间的用户和组映射。
+
+      在启动容器时可以通过 `-e` 将本地用户和组信息映射到容器内，以实现本地和容器中运行时的权限统一。
+
+    > `-p`
+
+      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本教程设置为5433。
+
+    容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
+
+    ```bash
+    MegaWise server is running...
 
 4. 操作 MegaWise。
   
