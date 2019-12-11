@@ -237,7 +237,7 @@ title: "安装 MegaWise"
      2. 下载配置文件和示例数据。
      3. 启动 MegaWise。
      4. 准备示例数据并导入 MegaWise。
-     5. 修改相关配置参数，重启 MegaWise 服务。
+     5. 修改相关配置参数。
 
 若出现 `Successfully installed MegaWise and imported test data` 则表示 MegaWise 成功安装且示例数据已导入。
 
@@ -421,23 +421,23 @@ title: "安装 MegaWise"
     如果出现以下信息：
 
     ```bash
-    psql (11.1)
+    psql (11.6 (Ubuntu 11.6-1.pgdg18.04+1), server 11.1)
     Type "help" for help.
 
-    postgres=>
+    postgres=#
     ```
 
     就说明成功连接上 MegaWise 了。
     
 ### 从 Docker 外部连接 MegaWise 
 
-1. 关闭 MegaWise。
+ 1. 关闭 MegaWise。
 
     ```bash
     $ sudo docker stop <$MegaWise_Container_ID>
     ```
 
-2. 进入 MegaWise 的工作目录并进行以下修改： 
+ 2. 进入 MegaWise 的工作目录并进行以下修改： 
 
     1. 打开 `data` 目录下面的 `postgresql.conf` 配置文件。将 `listen_addresses` 参数的值设置为 `'*'`（注意引号）并取消此行的注释。
 
@@ -446,7 +446,7 @@ title: "安装 MegaWise"
         ```bash
         host   all      all     0.0.0.0/0      trust
         ```
-3. 重新启动 MegaWise。
+ 3. 重新启动 MegaWise。
 
    > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
 
@@ -494,7 +494,7 @@ title: "安装 MegaWise"
     ```bash
     MegaWise server is running...
 
-4. 操作 MegaWise。
+ 4. 操作 MegaWise。
   
     ```bash
     $ psql -U $USER_ID -p 5433 -h $IP_ADDR -d postgres
@@ -514,12 +514,22 @@ title: "安装 MegaWise"
     如果出现以下信息：
 
     ```bash
-    psql (11.1)
+    psql (11.6 (Ubuntu 11.6-1.pgdg18.04+1), server 11.1)
     Type "help" for help.
 
-    postgres=>
+    postgres=#
     ```
 
-    就说明成功连接上 MegaWise 了。
+    就说明成功连接上 MegaWise 了。MegaWise 的 docker 启动后会内置一个默认数据库 postgres。
 
     > 注意：如果连接超时，建议检查防火墙设置是否正确。MegaWise 当前版本不提供数据持久化功能，建议每次重启后重新进行数据导入。
+    
+    ## 创建 MegaWise 用户连接 Infini 可视化界面
+    
+    如果您需要和 Infini 可视化界面进行连接，请在 postgres 数据库中创建一个用户，用户名为 `zilliz`，密码为 `zilliz`。
+    
+    ```sql
+    postgres=# CREATE USER zilliz WITH PASSWORD 'zilliz';
+    postgres=# grant all privileges on database postgres to zilliz;
+    ```
+    
