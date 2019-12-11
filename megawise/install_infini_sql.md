@@ -418,7 +418,6 @@ title: "安装 MegaWise"
     $ sudo docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
     $ cd script && ./connect.sh
     ```   
-    MegaWise 的 docker 启动后会内置一个默认数据库 `postgres` ，在该数据库上会创建一个默认用户 `zilliz` ，接下来会提示输入密码，默认 `zilliz` 。
     如果出现以下信息：
 
     ```bash
