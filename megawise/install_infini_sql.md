@@ -448,6 +448,8 @@ title: "安装 MegaWise"
         ```
 3. 重新启动 MegaWise。
 
+   > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
+
      ```bash
     $ sudo docker run --gpus all --shm-size 17179869184 \
                             -e USER=`id -u` -e GROUP=`id -g` \
