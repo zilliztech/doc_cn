@@ -243,6 +243,8 @@ title: "安装 MegaWise"
 
 ## 手动安装 MegaWise
 
+### 安装并启动 MegaWise
+
 1. 在 [docker hub](https://hub.docker.com/r/zilliz/megawise/tags) 查询最新的 MegaWise 版本号。
 
 2. 执行以下命令获得 0.5.0 版本的 MegaWise 的 docker 镜像。
