@@ -387,7 +387,7 @@ title: "安装 MegaWise"
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
+      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节。
 
     - `-v`
 
@@ -480,7 +480,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
+      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节。
 
     - `-v`
 
