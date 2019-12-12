@@ -239,7 +239,7 @@ title: "安装 MegaWise"
      4. 准备示例数据并导入 MegaWise。
      5. 修改相关配置参数。
 
-若出现 `Successfully installed MegaWise and imported test data` 则表示 MegaWise 成功安装且示例数据已导入。
+若出现 `Successfully installed MegaWise and imported test data` 则表示 MegaWise 成功安装且示例数据已导入。自动安装后，MegaWise 的 docker 启动后会内置一个默认数据库 postgres。默认用户名 `zilliz`，密码 `zilliz`。
 
 ## 手动安装 MegaWise
 
@@ -373,6 +373,7 @@ title: "安装 MegaWise"
                             -v $WORK_DIR/logs:/megawise/logs \
                             -v $WORK_DIR/server_data:/megawise/server_data \
                             -v /home/$USER/.nv:/home/megawise/.nv \
+                            -v /tmp:/tmp \
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
@@ -384,23 +385,23 @@ title: "安装 MegaWise"
 
     参数说明
 
-    > `--shm-size`
+    - `--shm-size`
 
       Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
 
-    > `-v`
+    - `-v`
 
       宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
 
       在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
     
-    > `-e`
+    - `-e`
 
       宿主机和 image 之间的用户和组映射。
 
       在启动容器时可以通过 `-e` 将本地用户和组信息映射到容器内，以实现本地和容器中运行时的权限统一。
 
-    > `-p`
+    - `-p`
 
       宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本教程设置为5433。
 
@@ -458,6 +459,7 @@ title: "安装 MegaWise"
                             -v $WORK_DIR/logs:/megawise/logs \
                             -v $WORK_DIR/server_data:/megawise/server_data \
                             -v /home/$USER/.nv:/home/megawise/.nv \
+                            -v /tmp:/tmp \
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
@@ -470,25 +472,25 @@ title: "安装 MegaWise"
 
     参数说明
 
-    > `--shm-size`
+    - `--shm-size`
 
       Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节
 
-    > `-v`
+    - `-v`
 
       宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
 
       在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
     
-    > `-e`
+    - `-e`
 
       宿主机和 image 之间的用户和组映射。
 
       在启动容器时可以通过 `-e` 将本地用户和组信息映射到容器内，以实现本地和容器中运行时的权限统一。
 
-    > `-p`
+    - `-p`
 
-      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本教程设置为5433。
+      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本安装指南设置为5433。
 
     容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
 
@@ -526,15 +528,36 @@ title: "安装 MegaWise"
 
     > 注意：如果连接超时，建议检查防火墙设置是否正确。MegaWise 当前版本不提供数据持久化功能，建议每次重启后重新进行数据导入。
     
-## 创建 MegaWise 用户并导入数据
+### 创建 MegaWise 用户并导入数据
     
-在 postgres 数据库中创建一个用户。用户名为 `zilliz`，密码为 `zilliz`。
+对于手动安装，您需要在 postgres 数据库中创建一个用户。用户名为 `zilliz`，密码为 `zilliz`。
     
-   ```sql
+   ```bash
    postgres=# CREATE USER zilliz WITH PASSWORD 'zilliz';
    postgres=# grant all privileges on database postgres to zilliz;
    ```
-用户创建完成后，您可以使用创建好的用户向 postgres 数据库中导入数据。
+用户创建完成后，您可以使用创建好的用户向 postgres 数据库中导入数据。下面是一个创建扩展、建表、并导入数据的例子：
+
+   ```bash
+   postgres=# create extension zdb_fdw;
+   postgres=# create table nyc_taxi(
+    vendor_id text,
+    tpep_pickup_datetime timestamp,
+    tpep_dropoff_datetime timestamp,
+    passenger_count int,
+    trip_distance float,
+    pickup_longitute float,
+    pickup_latitute float,
+    dropoff_longitute float,
+    dropoff_latitute float,
+    fare_amount float,
+    tip_amount float,
+    total_amount float
+    );
+   postgres=# copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
+    WITH DELIMITER ',' csv header;
+   ```
+> 注意：如果您需要在 Infini 可视化界面上创建图表，则需要创建扩展 `zdb_fdw`。使用 copy 导入数据时应该保证数据所在目录已经映射到 MegaWise Docker。本安装指南在之前步骤已经完成了 `tmp` 目录的映射，所以您可以直接使用 `tmp` 来存放并导入数据。
 
 ## 接下来您可以
 
