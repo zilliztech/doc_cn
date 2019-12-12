@@ -411,7 +411,13 @@ title: "安装 MegaWise"
     MegaWise server is running...
     ```
 
-### 从 Docker 内部连接 MegaWise
+### 连接 MegaWise
+
+MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise 或者从 Docker 外部连接 MegaWise。
+
+> 如果您要使用 Infini 可视化界面，则必须从 Docker 外部连接 MegaWise。
+
+#### 从 Docker 内部连接 MegaWise
 
  1. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
  
@@ -430,7 +436,7 @@ title: "安装 MegaWise"
 
     就说明成功连接上 MegaWise 了。
     
-### 从 Docker 外部连接 MegaWise 
+#### 从 Docker 外部连接 MegaWise 
 
  1. 关闭 MegaWise。
 
