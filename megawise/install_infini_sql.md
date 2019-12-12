@@ -536,33 +536,42 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
     
 ### 创建 MegaWise 用户并导入数据
     
-对于手动安装，您需要在 postgres 数据库中创建一个用户。用户名为 `zilliz`，密码为 `zilliz`。
+1. 在 postgres 数据库中创建一个用户。用户名为 `zilliz`，密码为 `zilliz`。
     
    ```bash
    postgres=# CREATE USER zilliz WITH PASSWORD 'zilliz';
    postgres=# grant all privileges on database postgres to zilliz;
    ```
-用户创建完成后，您可以使用创建好的用户向 postgres 数据库中导入数据。下面是一个创建扩展、建表、并导入数据的例子：
+2. 用户创建完成后，您可以使用创建好的用户向 postgres 数据库中导入示例数据。
+
+   获取示例数据：
 
    ```bash
-   postgres=# create extension zdb_fdw;
-   postgres=# create table nyc_taxi(
-    vendor_id text,
-    tpep_pickup_datetime timestamp,
-    tpep_dropoff_datetime timestamp,
-    passenger_count int,
-    trip_distance float,
-    pickup_longitute float,
-    pickup_latitute float,
-    dropoff_longitute float,
-    dropoff_latitute float,
-    fare_amount float,
-    tip_amount float,
-    total_amount float
-    );
-   postgres=# copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
-    WITH DELIMITER ',' csv header;
+   $ wget -P /tmp https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/sample_data/nyc_taxi_data.csv
    ```
+
+   创建扩展、建表、并导入示例数据：
+   
+   ```bash
+      postgres=# create extension zdb_fdw;
+      postgres=# create table nyc_taxi(
+       vendor_id text,
+       tpep_pickup_datetime timestamp,
+       tpep_dropoff_datetime timestamp,
+       passenger_count int,
+       trip_distance float,
+       pickup_longitute float,
+       pickup_latitute float,
+       dropoff_longitute float,
+       dropoff_latitute float,
+       fare_amount float,
+       tip_amount float,
+       total_amount float
+       );
+      postgres=# copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
+       WITH DELIMITER ',' csv header;
+    ```
+      
 > 注意：如果您需要在 Infini 可视化界面上创建图表，则需要创建扩展 `zdb_fdw`。使用 copy 导入数据时应该保证数据所在目录已经映射到 MegaWise Docker。本安装指南在之前步骤已经完成了 `tmp` 目录的映射，所以您可以直接使用 `tmp` 来存放并导入数据。
 
 ## 接下来您可以
