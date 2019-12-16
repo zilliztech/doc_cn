@@ -54,9 +54,9 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
 ## 安装步骤
 
-> 注意：不要使用有 root 权限的用户进行安装。
+> 注意：不要使用有 root 权限的用户进行安装或运行 MegaWise Docker。
 
-1. 执行以下命令获得 0.5.0-ppc64le 版本的 MegaWise 的 docker 镜像。
+1. 执行以下命令获得 0.5.0-ppc64le 版本的 MegaWise 的 Docker 镜像。
 
     ```bash
     $ docker pull zilliz/megawise:0.5.0-ppc64le
