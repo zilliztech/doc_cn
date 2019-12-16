@@ -159,8 +159,9 @@ title: "安装 MegaWise"
 5. 重新执行以下命令验证 Docker 是否安装成功。如果能够打印 Docker 的版本信息，则说明已成功安装 Docker。
 
    ```bash
-   $ sudo docker -v
+   $ docker -v
    ```
+   > 注意：如果您是非 root 用户，建议将用户加入 `docker` 用户组。否则需要在 `docker` 命令前加 `sudo`。详细信息请参考 [https://docs.docker.com/install/linux/linux-postinstall/](https://docs.docker.com/install/linux/linux-postinstall/)。
 
 ### 安装 NVIDIA container toolkit
 
@@ -195,7 +196,7 @@ title: "安装 MegaWise"
 5. 验证 NVIDIA container toolkit 是否安装成功。
 
    ```bash
-   $ sudo docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
+   $ docker run --gpus all nvidia/cuda:9.0-base nvidia-smi
    ```
 
 
@@ -250,7 +251,7 @@ title: "安装 MegaWise"
 2. 执行以下命令获得 0.5.0 版本的 MegaWise 的 docker 镜像。
 
     ```bash
-    $ sudo docker pull zilliz/megawise:0.5.0
+    $ docker pull zilliz/megawise:0.5.0
     ```
 
 3. 安装 PostgreSQL 客户端。
@@ -368,7 +369,7 @@ title: "安装 MegaWise"
 7. 启动 MegaWise。
 
     ```bash
-    $ sudo docker run --gpus all --shm-size 17179869184 \
+    $ docker run --gpus all --shm-size 17179869184 \
                             -e USER=`id -u` -e GROUP=`id -g` \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
@@ -382,7 +383,7 @@ title: "安装 MegaWise"
     > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
       ```bash
-        $ sudo docker image ls
+        $ docker image ls
       ```
     > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
     
@@ -425,7 +426,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
  1. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
  
     ```shell
-    $ sudo docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
+    $ docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
     $ cd script && ./connect.sh
     ```   
     如果出现以下信息：
@@ -444,7 +445,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
  1. 关闭 MegaWise。
 
     ```bash
-    $ sudo docker stop <$MegaWise_Container_ID>
+    $ docker stop <$MegaWise_Container_ID>
     ```
 
  2. 进入 MegaWise 的工作目录并进行以下修改： 
@@ -461,7 +462,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
     > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
 
     ```bash
-    $ sudo docker run --gpus all --shm-size 17179869184 \
+    $ docker run --gpus all --shm-size 17179869184 \
                             -e USER=`id -u` -e GROUP=`id -g` \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
@@ -476,7 +477,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
     > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
     ```bash
-    $ sudo docker image ls
+    $ docker image ls
     ```
     
     > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
