@@ -243,6 +243,8 @@ title: "安装 MegaWise"
 
 ## 手动安装 MegaWise
 
+### 安装并启动 MegaWise
+
 1. 在 [docker hub](https://hub.docker.com/r/zilliz/megawise/tags) 查询最新的 MegaWise 版本号。
 
 2. 执行以下命令获得 0.5.0 版本的 MegaWise 的 docker 镜像。
@@ -377,12 +379,13 @@ title: "安装 MegaWise"
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
-    > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+    > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
       ```bash
         $ sudo docker image ls
       ```
-
+    > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
+    
     参数说明
 
     - `--shm-size`
@@ -470,11 +473,13 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
                             $IMAGE_ID
     ```
     
-    > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+    > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
     ```bash
     $ sudo docker image ls
     ```
+    
+    > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
 
     参数说明
 
