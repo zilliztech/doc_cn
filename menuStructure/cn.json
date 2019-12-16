@@ -47,14 +47,33 @@
         "order": 0
       },
       {
-        "id": "install_megawise",
+        "id": "install_megawise_menu",
         "title": "安装 MegaWise",
         "lang": "cn",
         "label1": "用户手册",
         "label2": "MegaWise 数据分析引擎",
         "label3": "",
-        "order": 1
+        "order": 1,
+        "isMenu": true
       }, 
+      {
+        "id": "install_megawise",
+        "title": "x86 平台",
+        "lang": "cn",
+        "label1": "MegaWise 数据分析引擎",
+        "label2": "安装 MegaWise",
+        "label3": "",
+        "order": 1
+      },
+      {
+        "id": "install_megawise_powerpc",
+        "title": "PowerPC 平台",
+        "lang": "cn",
+        "label1": "MegaWise 数据分析引擎",
+        "label2": "安装 MegaWise",
+        "label3": "",
+        "order": 2
+      },  
       {
         "id": "megawise_basic_operation",
         "title": "基本数据操作",
