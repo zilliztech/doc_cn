@@ -1,13 +1,13 @@
 ---
 id: "install_megawise"
 lang: "cn"
-title: "安装 MegaWise"
+title: "安装 MegaWise（x86 平台）"
 ---
 
 
 # 安装 MegaWise
 
-本文档主要介绍 MegaWise Docker 的安装和配置等操作。
+本文档主要介绍 x86平台的 MegaWise Docker 的安装和配置等操作。
 
 
 ## 安装前提
