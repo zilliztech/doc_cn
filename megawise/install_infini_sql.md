@@ -379,12 +379,13 @@ title: "安装 MegaWise"
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
-    > `$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+    > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
       ```bash
         $ sudo docker image ls
       ```
-
+    > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
+    
     参数说明
 
     - `--shm-size`
