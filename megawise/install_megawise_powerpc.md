@@ -1,5 +1,5 @@
 ---
-id: "install_megawise_power_pc"
+id: "install_megawise_powerpc"
 lang: "cn"
 title: "安装 MegaWise (PowerPC 平台)"
 ---
