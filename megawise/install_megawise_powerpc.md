@@ -42,7 +42,7 @@ title: "安装 MegaWise (PowerPC 平台)"
 > 注意：您可以使用以下命令检查 NVIDIA 驱动的安装版本：
 
 ```bash
-$ nvidia-smi 
+$ sudo nvidia-smi 
 ```
 
 > 注意：您可以使用以下命令检查 Docker 和 NVIDIA Container Runtime 是否安装成功：
