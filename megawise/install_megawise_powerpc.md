@@ -232,7 +232,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
  1. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
  
     ```shell
-    $ docker exec -u `id -u` -it <$MegaWise_Container_ID> bash
+    $ docker exec -u megawise -it <$MegaWise_Container_ID> bash
     $ cd script && ./connect.sh
     ```   
     如果出现以下信息：
