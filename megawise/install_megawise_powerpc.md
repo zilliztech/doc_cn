@@ -54,6 +54,8 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
 ## 安装步骤
 
+> 注意：不要使用有 root 权限的用户进行安装。
+
 1. 执行以下命令获得 0.5.0-ppc64le 版本的 MegaWise 的 docker 镜像。
 
     ```bash
@@ -213,7 +215,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
     - `-p`
 
-      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本教程设置为5433。
+      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本指南设置为5433。
 
     容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
 
