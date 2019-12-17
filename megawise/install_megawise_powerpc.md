@@ -21,7 +21,7 @@ title: "安装 MegaWise (PowerPC 平台)"
 | 内存         | 16 GB 或以上           |
 | 硬盘                  | 1 TB 或以上         |
 
-> 注意：ppc64le 架构以外的 PowerPC CPU 未经过测试，无法保证正常安装和运行 MegaWise。
+> 注意：ppc64le 架构以外的 PowerPC CPU 未经过测试，有可能不支持 MegaWise。
 
 ### 软件要求
 
