@@ -31,6 +31,8 @@ title: "安装 MegaWise (PowerPC 平台)"
 | Docker                   | 仅支持18.03         |
 | NVIDIA Container Runtime |      最新版本        |
 
+> 注意：PowerPC 平台的软件要求与 x86 平台的软件要求不同。请检查操作系统和 Docker 版本是否满足要求。PowerPC 平台不支持 NVIDIA Container Toolkit，您需要使用 NVIDIA Container Runtime。   
+
 ### 安装 NVIDIA 驱动、Docker 和 NVIDIA Container Runtime
 
 具体安装方法请参考这些软件的官方网站：
