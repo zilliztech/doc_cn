@@ -21,7 +21,7 @@ title: "安装 MegaWise (PowerPC 平台)"
 | 内存         | 16 GB 或以上           |
 | 硬盘                  | 1 TB 或以上         |
 
-> 注意：ppc64le 架构以外的 PowerPC CPU 未经过测试，无法保证正常安装和运行 MegaWise。
+> 注意：ppc64le 架构以外的 PowerPC CPU 未经过测试，有可能不支持 MegaWise。
 
 ### 软件要求
 
@@ -102,10 +102,8 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
 5. 根据 MegaWise 所在的服务器环境修改配置文件。
 
-   1. 打开 `conf` 目录下面的 `user_config.yaml` 配置文件。
-
-       1. 定位到如下片段：
-
+   1. 打开 `conf` 目录下面的 `user_config.yaml` 配置文件。定位到如下片段：
+       
       ```yaml
       memory:  
         cpu:
@@ -123,59 +121,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
       `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器物理内存总量的70%以上；
    
       `gpu` 部分，`num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
-      
-   
-    2. 打开 `conf` 目录下面的 `megawise_config_template.yaml` 配置文件。
-   
-        1. 定位到如下片段并设置相关参数。
-
-            ```yaml
-              worker_config:
-                bitcode_lib: @bitcode_lib@
-                precompile: true
-                stage:
-                  build_task_context_parallelism: 1
-                  fetch_meta_parallelism: 1
-                  compile_parallelism: 1
-                  fetch_data_parallelism: 1
-                  compute_parallelism: 1
-                  output_parallelism: 1
-                worker_num : 2
-                gpu:
-                  physical_memory: 2    # unit: GB
-                  partition_memory: 2   # unit: GB
-                cuda_profile_query_cnt: -1 #-1 means don't profile, positive integer means the number of queries to profile, other value invalid
-            ```
-
-            依据下表设置以下参数的值：
-
-            | 参数                     | 值                   |
-            |--------------------------|-------------------------|
-            | `worker_num` |  `user_config.yaml` 中的 `gpu_num` 值            |
-            | `physical_memory` |  `user_config.yaml` 中的 `physical_memory` 值            |
-            | `partition_memory` |  `user_config.yaml` 中的 `partition_memory` 值           |
-
-        2. 定位到如下片段并设置相关参数。
-
-            ```yaml
-              string_config:
-                dict_config:
-                  cache_size: 21474836480  # 20G
-                  split_threshold: 1000000
-                  split_each: 100000
-                  small_scale_num: 4000    # try not to use the temporary id
-                hash_config:
-                  cache_size: 21474836480  # 20G
-                  bucket_num: 1999993      # prime number is a good choice
-                  bucket_size: 500         # make sure that each string is shorter than bucket_size-5
-                  file_size: 104857600     # 100M
-            ```
-
-            `dict_config` 中的 `cache_size` 表示用于字符串字典编码的内存总量，单位为字节。
-
-            `hash_config` 中的 `cache_size` 表示用于字符串哈希编码的内存总量，单位为字节。
-    
-  
+        
 
 6. 启动 MegaWise。
 
