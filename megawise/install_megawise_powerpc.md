@@ -42,6 +42,7 @@ title: "安装 MegaWise (PowerPC 平台)"
 - NVIDIA 驱动：[https://www.nvidia.com/Download/index.aspx?lang=en-us](https://www.nvidia.com/Download/index.aspx?lang=en-us)
 - NVIDIA Container Runtime：[https://github.com/NVIDIA/nvidia-container-runtime](https://github.com/NVIDIA/nvidia-container-runtime)
 
+
 > 注意：您可以使用以下命令检查 NVIDIA 驱动的安装版本：
 
 ```bash
@@ -55,6 +56,10 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 ```
 > 注意：如果您是非 root 用户，建议将用户加入 `docker` 用户组。否则需要在 `docker` 命令前加 `sudo`。详细信息请参考 [https://docs.docker.com/install/linux/linux-postinstall/](https://docs.docker.com/install/linux/linux-postinstall/)。
 
+### 安装 PostgreSQL 客户端
+
+为了验证 MegaWise 是否安装成功，您需要安装 PostgreSQL 客户端（版本 11.0）。具体安装方法请参考[https://www.postgresql.org/download/](https://www.postgresql.org/download/)。
+
 ## 安装步骤
 
 > 注意：不要使用有 root 权限的用户进行安装或运行 MegaWise Docker。
@@ -65,23 +70,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
     $ docker pull zilliz/megawise:0.5.0-ppc64le
     ```
 
-2. 安装 PostgreSQL 客户端。
-
-    ```bash
-    $ sudo apt-get install curl ca-certificates
-    $ curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-    $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
-    $ sudo apt-get update
-    $ sudo apt-get install postgresql-client-11
-    ```
-
-    PostgreSQL 客户端默认安装路径是`/usr/lib/postgresql/11/bin/`，安装完成后执行 `which psql` 命令，如果没有输出 PostgreSQL 客户端程序的正确路径，需要手动将安装路径加到环境变量中。
-
-    ```bash
-    $ export PATH=/usr/lib/postgresql/11/bin:$PATH
-    ```
-
-3. 新建一个目录作为工作目录。
+2. 新建一个目录作为工作目录。
 
     ```bash
     $ cd $WORK_DIR
@@ -89,7 +78,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
     $ mkdir logs
     ```
 
-4. 获取 MegaWise 配置文件。
+3. 获取 MegaWise 配置文件。
 
     ```bash
     $ cd $WORK_DIR/conf
@@ -100,7 +89,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
     https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/megawise_config.yaml
     ```
 
-5. 根据 MegaWise 所在的服务器环境修改配置文件。
+4. 根据 MegaWise 所在的服务器环境修改配置文件。
 
    1. 打开 `conf` 目录下面的 `user_config.yaml` 配置文件。定位到如下片段：
        
@@ -116,14 +105,14 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
           partition_memory: 2 # size in GB
       ```
 
-      根据服务器的硬件配置，对上述的配置项进行设置（数值单位为 GB ）。
+      根据服务器的硬件配置，对上述的配置项进行设置（数值单位为 GB）。
 
-      `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器物理内存总量的70%以上；
+      `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器共享内存总量的70%以上；
    
       `gpu` 部分，`num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
         
 
-6. 启动 MegaWise。
+5. 启动 MegaWise。
 
     ```bash
     $ docker run -d --runtime=nvidia --shm-size 17179869184 \
