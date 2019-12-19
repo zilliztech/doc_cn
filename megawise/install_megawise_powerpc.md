@@ -58,7 +58,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
 ### 安装 PostgreSQL 客户端
 
-为了验证 MegaWise 是否安装成功，您需要安装 PostgreSQL 客户端（版本 11.0）。具体安装方法请参考[https://www.postgresql.org/download/](https://www.postgresql.org/download/)。
+为了验证 MegaWise 是否安装成功，您需要安装 PostgreSQL 11 客户端。具体安装方法请参考[https://www.postgresql.org/download/](https://www.postgresql.org/download/)。
 
 ## 安装步骤
 
