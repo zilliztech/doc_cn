@@ -108,7 +108,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
       根据服务器的硬件配置，对上述的配置项进行设置（数值单位为 GB）。
 
-      `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器共享内存总量的70%以上；
+      `cpu` 部分，`physical_memory` 和 `partition_memory`分别表示 MegaWise 可用的内存总容量和数据缓存分区的内存容量。建议将 `partition_memory` 和 `physical_memory` 均设置为服务器共享内存可用容量的70%以上；
    
       `gpu` 部分，`num` 表示当前 MegaWise 使用的 GPU 数量，`physical_memory` 和 `partition_memory` 分别表示 MegaWise 可用的显存总容量和数据缓存分区的显存容量。建议预留 2GB 显存用于存储计算过程中的中间结果，即将 `partition_memory` 和 `physical_memory` 均设置为单张显卡显存容量的值减2。
         
