@@ -213,7 +213,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
         ```
  3. 重新启动 MegaWise。
 
-    > 注意：您不能使用 `docker start $Container_ID` 的方式来重新启动 MegaWise。
+    > 注意：您不能使用 `docker start $CONTAINER_ID` 的方式来重新启动 MegaWise。
 
     ```bash
     $ docker run -d --runtime=nvidia --shm-size $SHM_SIZE \
