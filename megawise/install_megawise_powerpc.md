@@ -64,6 +64,8 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
 > 注意：不要使用有 root 权限的用户进行安装或运行 MegaWise Docker。
 
+> 注意：MegaWise 当前版本不提供数据持久化功能，每次重启后您必须重新进行数据导入。
+
 1. 执行以下命令获得 0.5.0-ppc64le 版本的 MegaWise 的 Docker 镜像。
 
     ```bash
@@ -115,8 +117,8 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 5. 启动 MegaWise。
 
     ```bash
-    $ docker run -d --runtime=nvidia --shm-size 17179869184 \
-                            -e USER=`id -u` -e GROUP=`id -g` \
+    $ docker run -d --runtime=nvidia --shm-size $SHM_SIZE \
+                            -e USER=megawise -e GROUP=`id -g` \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
                             -v $WORK_DIR/logs:/megawise/logs \
@@ -137,7 +139,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节。
+      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储（单位为 KB）乘以700。
 
     - `-v`
 
@@ -155,7 +157,13 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
       宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本指南设置为5433。
 
-    容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
+    容器启动后，将会启动日志，您可以通过以下命令查看日志：
+    
+    ```bash
+    $ docker logs $CONTAINER_ID
+    ```
+    
+    如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
 
     ```bash
     MegaWise server is running...
@@ -172,7 +180,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
  1. 进入 MegaWise Docker 的 bash 命令并连接 MegaWise 数据库：
  
     ```shell
-    $ docker exec -u megawise -it <$MegaWise_Container_ID> bash
+    $ docker exec -u megawise -it $CONTAINER_ID bash
     $ cd script && ./connect.sh
     ```   
     如果出现以下信息：
@@ -191,7 +199,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
  1. 关闭 MegaWise。
 
     ```bash
-    $ docker stop <$MegaWise_Container_ID>
+    $ docker stop $CONTAINER_ID
     ```
 
  2. 进入 MegaWise 的工作目录并进行以下修改： 
@@ -205,11 +213,11 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
         ```
  3. 重新启动 MegaWise。
 
-    > 注意：您不能使用 `docker start <$MegaWise_Container_ID>` 的方式来重新启动 MegaWise。
+    > 注意：您不能使用 `docker start $Container_ID` 的方式来重新启动 MegaWise。
 
     ```bash
-    $ docker run -d --runtime=nvidia --shm-size 17179869184 \
-                            -e USER=`id -u` -e GROUP=`id -g` \
+    $ docker run -d --runtime=nvidia --shm-size $SHM_SIZE \
+                            -e USER=megawise -e GROUP=`id -g` \
                             -v $WORK_DIR/conf:/megawise/conf \
                             -v $WORK_DIR/data:/megawise/data \
                             -v $WORK_DIR/logs:/megawise/logs \
@@ -219,20 +227,18 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
-    
     > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
 
-    ```bash
-    $ docker image ls
-    ```
-    
+      ```bash
+        $ docker image ls
+      ```
     > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
-
+    
     参数说明
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的内存大小，改值取 `user_config.yaml` 配置文件中 `cache` 配置项下的 `cpu` 配置项的 `physical_memory` 的值，单位为字节。
+      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储（单位为 KB）乘以700。
 
     - `-v`
 
@@ -248,15 +254,21 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
 
     - `-p`
 
-      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本安装指南设置为5433。
+      宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本指南设置为5433。
 
-    容器启动后，将会启动日志，如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
+    容器启动后，将会启动日志，您可以通过以下命令查看日志：
+    
+    ```bash
+    $ docker logs $CONTAINER_ID
+    ```
+    
+    如果能找到如下日志内容，则说明 MegaWise server 已经启动成功。
 
     ```bash
     MegaWise server is running...
     ```
 
- 4. 操作 MegaWise。
+ 4. 连接 MegaWise。
   
     ```bash
     $ psql -U $USER_ID -p 5433 -h $IP_ADDR -d postgres
@@ -284,7 +296,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
 
     就说明成功连接上 MegaWise 了。MegaWise 的 docker 启动后会内置一个默认数据库 postgres。
 
-    > 注意：如果连接超时，建议检查防火墙设置是否正确。MegaWise 当前版本不提供数据持久化功能，建议每次重启后重新进行数据导入。
+    > 注意：如果连接超时，建议检查防火墙设置是否正确。
     
 ### 创建 MegaWise 用户并导入数据
     
