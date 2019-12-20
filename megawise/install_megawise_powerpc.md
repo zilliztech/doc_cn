@@ -128,14 +128,8 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
                             -p 5433:5432 \
                             $IMAGE_ID
     ```
-    > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
-
-      ```bash
-        $ docker image ls
-      ```
-    > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
     
-    参数说明
+    **参数说明**
 
     - `--shm-size`
 
@@ -146,6 +140,8 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
       宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
 
       在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
+      
+      > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
     
     - `-e`
 
@@ -156,6 +152,13 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
     - `-p`
 
       宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本指南设置为5433。
+      
+    > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+
+      ```bash
+        $ docker image ls
+      ```
+     
 
     容器启动后，将会启动日志，您可以通过以下命令查看日志：
     
@@ -234,7 +237,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
       ```
     > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
     
-    参数说明
+    **参数说明**
 
     - `--shm-size`
 
@@ -245,6 +248,8 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
       宿主机和 image 之间的目录映射，用 `:` 隔开，前面是宿主机的目录，后面是 Docker image 的目录。
 
       在启动容器时可以通过 `-v` 将本地存储的数据文件映射到容器内，以实现本地文件导入 MegaWise 数据库。
+      
+      > 注意：`-v /tmp:/tmp` 表示对 `tmp` 目录的映射，在本指南中用于存放示例数据。您可以根据实际情况设置映射目录。
     
     - `-e`
 
@@ -255,6 +260,13 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
     - `-p`
 
       宿主机和 image 之间的端口映射，用 `:` 隔开，前面是宿主机的端口，后面是 Docker image 的端口，宿主机的端口可以随意设置未被占用的端口，本指南设置为5433。
+      
+    > 注意：`$IMAGE_ID` 指 MegaWise Docker 镜像的 image ID，可以通过以下命令查看：
+
+      ```bash
+        $ docker image ls
+      ```
+     
 
     容器启动后，将会启动日志，您可以通过以下命令查看日志：
     
