@@ -132,7 +132,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储（单位为 KB）乘以700。
+      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储的 70%。您可以通过 `df -h` 命令查看`/dev/shm` 目录的可用存储。注意将可用存储的单位转换为字节再计算 `--shm-size` 的值。
 
     - `-v`
 
@@ -240,7 +240,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储（单位为 KB）乘以700。
+      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储的 70%。您可以通过 `df -h` 命令查看`/dev/shm` 目录的可用存储。注意将可用存储的单位转换为字节再计算 `--shm-size` 的值。
 
     - `-v`
 
