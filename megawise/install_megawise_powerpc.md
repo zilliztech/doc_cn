@@ -283,14 +283,9 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
  4. 连接 MegaWise。
   
     ```bash
-    $ psql -U $USER_ID -p 5433 -h $IP_ADDR -d postgres
+    $ psql -U megawise -p 5433 -h $IP_ADDR -d postgres
     ```
 
-    > `$USER_ID` 可以通过以下命令得到：
-
-    ```bash
-    $ id -u
-    ```
     > `$IP_ADDR` 可以通过以下命令得到：
 
     ```bash
