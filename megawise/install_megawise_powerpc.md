@@ -9,6 +9,7 @@ title: "安装 MegaWise (PowerPC 平台)"
 
 本文档主要介绍 PowerPC 平台上 MegaWise Docker 的安装和配置等操作。
 
+> 注意：目前版本的 MegaWise 不具备数据持久化功能。如果您重启了 MegaWise，则必须重新导入数据。
 
 ## 安装前提
 
