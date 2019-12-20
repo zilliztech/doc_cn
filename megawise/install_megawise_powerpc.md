@@ -9,10 +9,6 @@ title: "安装 MegaWise (PowerPC 平台)"
 
 本文档主要介绍 PowerPC 平台上 MegaWise Docker 的安装和配置等操作。
 
-> 注意：目前版本的 MegaWise 不具备数据持久化功能。如果您重启了 MegaWise，则必须重新导入数据。
-
-> 注意：不要使用有 root 权限的用户进行安装或运行 MegaWise Docker。
-
 ## 安装前提
 
 ### 硬件要求
@@ -136,7 +132,7 @@ $ docker run --runtime=nvidia --rm nvidia/cuda-ppc64le nvidia-smi
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储（单位为 KB）乘以700。
+      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储的 70%。您可以通过 `df -h` 命令查看`/dev/shm` 目录的可用存储。注意将可用存储的单位转换为字节再计算 `--shm-size` 的值。
 
     - `-v`
 
@@ -244,7 +240,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
 
     - `--shm-size`
 
-      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储（单位为 KB）乘以700。
+      Docker image 运行时系统分配的共享内存大小，单位为字节。建议取值为 `/dev/shm` 目录的可用存储的 70%。您可以通过 `df -h` 命令查看`/dev/shm` 目录的可用存储。注意将可用存储的单位转换为字节再计算 `--shm-size` 的值。
 
     - `-v`
 
