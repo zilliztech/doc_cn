@@ -103,3 +103,6 @@ label2: "Infini"
 # Stop Infini
 $ docker-compose -f docker-compose.yml down
 ```
+## 接下来您可以
+
+[添加仪表盘和图表](./add_dashboard)
