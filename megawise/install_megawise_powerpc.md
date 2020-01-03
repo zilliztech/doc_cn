@@ -325,7 +325,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
    ```bash
       postgres=# create extension zdb_fdw;
       postgres=# \c zilliz;
-      postgres=# create table nyc_taxi(
+      postgres=> create table nyc_taxi(
        vendor_id text,
        tpep_pickup_datetime timestamp,
        tpep_dropoff_datetime timestamp,
@@ -339,7 +339,7 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
        tip_amount float,
        total_amount float
        );
-      postgres=# copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
+      postgres=> copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
        WITH DELIMITER ',' csv header;
     ```
       
