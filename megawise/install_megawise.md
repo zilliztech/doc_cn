@@ -530,7 +530,8 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
    
    ```bash
       postgres=# create extension zdb_fdw;
-      postgres=# create table nyc_taxi(
+      postgres=# \c - zilliz；
+      postgres=> create table nyc_taxi(
        vendor_id text,
        tpep_pickup_datetime timestamp,
        tpep_dropoff_datetime timestamp,
@@ -544,11 +545,11 @@ MegaWise Docker 启动之后，您可以选择从 Docker 内部连接 MegaWise �
        tip_amount float,
        total_amount float
        );
-      postgres=# copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
+      postgres=> copy nyc_taxi from '/tmp/nyc_taxi_data.csv'
        WITH DELIMITER ',' csv header;
     ```
       
-> 注意：如果您需要在 Infini 可视化界面上创建图表，则需要创建扩展 `zdb_fdw`。使用 copy 导入数据时应该保证数据所在目录已经映射到 MegaWise Docker。本安装指南在之前步骤已经完成了 `tmp` 目录的映射，所以您可以直接使用 `tmp` 来存放并导入数据。
+> 注意：如果您需要在 Infini 可视化界面上创建图表，则需要创建扩展 `zdb_fdw`。创建扩展后需要切换到 “zilliz” 用户来建表并导入数据。使用 copy 导入数据时应该保证数据所在目录已经映射到 MegaWise Docker。本安装指南在之前步骤已经完成了 `tmp` 目录的映射，所以您可以直接使用 `tmp` 来存放并导入数据。
 
 ## 接下来您可以
 
