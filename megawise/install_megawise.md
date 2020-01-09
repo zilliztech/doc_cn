@@ -288,6 +288,8 @@ title: "安装 MegaWise（x86 平台）"
     https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/etcd_config_template.yaml \
     https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/db/megawise_config.yaml
     ```
+    
+    > 注意：万一您遇到无法通过 `wget` 命令正常下载配置文件的情况，您也可以创建上方命令中的文件，然后复制[https://github.com/zilliztech/infini/tree/v0.5.0/config/db](https://github.com/zilliztech/infini/tree/v0.5.0/config/db) 中相关文件的内容。
 
 5. 根据 MegaWise 所在的服务器环境修改配置文件。
 
