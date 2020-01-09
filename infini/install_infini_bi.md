@@ -41,6 +41,7 @@ label2: "Infini"
    https://raw.githubusercontent.com/zilliztech/infini/v0.5.0/config/webserver/docker-compose.yml
 
    ```
+   > 注意：万一您遇到无法通过 `wget` 命令正常下载配置文件的情况，您也可以创建 `.env` 和 `docker-compose.yml` 文件，然后复制粘贴 [.env 文件](https://github.com/zilliztech/infini/blob/v0.5.0/config/webserver/.env) 和 [docker-compose.yml 文件](https://github.com/zilliztech/infini/blob/v0.5.0/config/webserver/docker-compose.yml) 的内容。
 
 3. 修改 `.env` 文件。
 
