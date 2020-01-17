@@ -45,7 +45,7 @@ label2: "Infini"
 
 3. 修改 `.env` 文件。
 
-   > 注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成当前运行 MegaWise docker 的服务器 IP 地址。
+   > 注意：请把 `192.168.1.60` 改成运行 Infini docker 的服务器 IP 地址。请把 `192.168.1.106` 改成运行 MegaWise docker 的服务器 IP 地址。
 
    ```yml
    # 默认API服务地址
@@ -78,7 +78,7 @@ label2: "Infini"
    # 如果修改了80端口，请加上端口号
    http://192.168.1.60
    ```
-> 注意：请把 `192.168.1.60` 改成当前运行 Infini docker 的服务器 IP 地址。
+> 注意：请把 `192.168.1.60` 改成运行 Infini docker 的服务器 IP 地址。
 
 ## 设置 Infini 界面
 
